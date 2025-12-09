@@ -783,7 +783,7 @@
 
       async function fetchData() {
         try {
-          const response = await fetch("../data/api.data.json");
+          const response = await fetch("./api.data.json");
           const jsonData = await response.json();
 
           const flatData = [];
