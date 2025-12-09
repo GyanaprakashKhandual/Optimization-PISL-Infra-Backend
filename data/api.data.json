@@ -1,0 +1,2723 @@
+{
+  "loadTestResults": {
+    "testDate": "2024-12-09",
+    "environment": "production",
+    "baseUrl": "https://pr.avidusinteractive.com",
+    "routes": [
+      {
+        "routeName": "AboutUsRoute",
+        "performance": {
+          "avgResponseTime": 3777.68,
+          "minResponseTime": 0.0,
+          "medResponseTime": 2520.48,
+          "maxResponseTime": 60000.34,
+          "p90ResponseTime": 8190.0,
+          "p95ResponseTime": 9610.0
+        },
+        "results": {
+          "successRate": 99.05,
+          "passRate": 0.0,
+          "totalRequests": 2861,
+          "failedRequests": 27
+        },
+        "apis": [
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/aboutUs",
+            "name": "Get About Us",
+            "successRate": 99.05,
+            "avgResponseTime": 3777.68,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.34,
+            "totalRequests": 2861,
+            "failedRequests": 27
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/aboutUs/63e32cab6277aaaaf9ece185",
+            "name": "Get About Us By ID",
+            "successRate": 99.05,
+            "avgResponseTime": 3777.68,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.34,
+            "totalRequests": 2861,
+            "failedRequests": 27
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/aboutUs/63e32cab6277aaaaf9ece185",
+            "name": "Update About Us",
+            "successRate": 99.05,
+            "avgResponseTime": 3777.68,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.34,
+            "totalRequests": 2861,
+            "failedRequests": 27
+          },
+          {
+            "method": "POST",
+            "url": "https://pr.avidusinteractive.com/api/web/aboutUs",
+            "name": "Create About Us",
+            "successRate": 99.05,
+            "avgResponseTime": 3777.68,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.34,
+            "totalRequests": 2861,
+            "failedRequests": 27
+          }
+        ]
+      },
+      {
+        "routeName": "ActivityRoute",
+        "performance": {
+          "avgResponseTime": 7731.26,
+          "minResponseTime": 0.0,
+          "medResponseTime": 6340.0,
+          "maxResponseTime": 60000.72,
+          "p90ResponseTime": 12860.0,
+          "p95ResponseTime": 17290.0
+        },
+        "results": {
+          "successRate": 97.92,
+          "passRate": 0.0,
+          "totalRequests": 1778,
+          "failedRequests": 37
+        },
+        "apis": [
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/activity",
+            "name": "Get Activity",
+            "successRate": 97.92,
+            "avgResponseTime": 7731.26,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.72,
+            "totalRequests": 1778,
+            "failedRequests": 37
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/activity/detail",
+            "name": "Get Activity Detail",
+            "successRate": 97.92,
+            "avgResponseTime": 7731.26,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.72,
+            "totalRequests": 1778,
+            "failedRequests": 37
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/activity",
+            "name": "Update Activity",
+            "successRate": 97.92,
+            "avgResponseTime": 7731.26,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.72,
+            "totalRequests": 1778,
+            "failedRequests": 37
+          },
+          {
+            "method": "POST",
+            "url": "https://pr.avidusinteractive.com/api/web/activity",
+            "name": "Create Activity",
+            "successRate": 97.92,
+            "avgResponseTime": 7731.26,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.72,
+            "totalRequests": 1778,
+            "failedRequests": 37
+          },
+          {
+            "method": "DELETE",
+            "url": "https://pr.avidusinteractive.com/api/web/activity",
+            "name": "Delete Activity",
+            "successRate": 97.92,
+            "avgResponseTime": 7731.26,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.72,
+            "totalRequests": 1778,
+            "failedRequests": 37
+          }
+        ]
+      },
+      {
+        "routeName": "BrandRoute",
+        "performance": {
+          "avgResponseTime": 17717.99,
+          "minResponseTime": 0.0,
+          "medResponseTime": 15550.0,
+          "maxResponseTime": 60000.95,
+          "p90ResponseTime": 30420.0,
+          "p95ResponseTime": 40340.0
+        },
+        "results": {
+          "successRate": 91.74,
+          "passRate": 0.0,
+          "totalRequests": 751,
+          "failedRequests": 62
+        },
+        "apis": [
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/brand",
+            "name": "Get Brand",
+            "successRate": 91.74,
+            "avgResponseTime": 17717.99,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.95,
+            "totalRequests": 751,
+            "failedRequests": 62
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/brand/detail",
+            "name": "Get Brand Detail",
+            "successRate": 91.74,
+            "avgResponseTime": 17717.99,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.95,
+            "totalRequests": 751,
+            "failedRequests": 62
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/brand",
+            "name": "Update Brand",
+            "successRate": 91.74,
+            "avgResponseTime": 17717.99,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.95,
+            "totalRequests": 751,
+            "failedRequests": 62
+          },
+          {
+            "method": "POST",
+            "url": "https://pr.avidusinteractive.com/api/web/brand",
+            "name": "Create Brand",
+            "successRate": 91.74,
+            "avgResponseTime": 17717.99,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.95,
+            "totalRequests": 751,
+            "failedRequests": 62
+          },
+          {
+            "method": "DELETE",
+            "url": "https://pr.avidusinteractive.com/api/web/brand",
+            "name": "Delete Brand",
+            "successRate": 91.74,
+            "avgResponseTime": 17717.99,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.95,
+            "totalRequests": 751,
+            "failedRequests": 62
+          }
+        ]
+      },
+      {
+        "routeName": "CategoryRoute",
+        "performance": {
+          "avgResponseTime": 8014.47,
+          "minResponseTime": 0.0,
+          "medResponseTime": 6750.0,
+          "maxResponseTime": 60000.68,
+          "p90ResponseTime": 13485.0,
+          "p95ResponseTime": 18865.0
+        },
+        "results": {
+          "successRate": 96.38,
+          "passRate": 0.0,
+          "totalRequests": 3290,
+          "failedRequests": 120
+        },
+        "apis": [
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/category",
+            "name": "Get Category",
+            "successRate": 96.38,
+            "avgResponseTime": 8014.47,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.68,
+            "totalRequests": 3290,
+            "failedRequests": 120
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/category/detail",
+            "name": "Get Category Detail",
+            "successRate": 96.38,
+            "avgResponseTime": 8014.47,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.68,
+            "totalRequests": 3290,
+            "failedRequests": 120
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/category",
+            "name": "Update Category",
+            "successRate": 96.38,
+            "avgResponseTime": 8014.47,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.68,
+            "totalRequests": 3290,
+            "failedRequests": 120
+          },
+          {
+            "method": "POST",
+            "url": "https://pr.avidusinteractive.com/api/web/category",
+            "name": "Create Category",
+            "successRate": 96.38,
+            "avgResponseTime": 8014.47,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.68,
+            "totalRequests": 3290,
+            "failedRequests": 120
+          },
+          {
+            "method": "DELETE",
+            "url": "https://pr.avidusinteractive.com/api/web/category",
+            "name": "Delete Category",
+            "successRate": 96.38,
+            "avgResponseTime": 8014.47,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.68,
+            "totalRequests": 3290,
+            "failedRequests": 120
+          }
+        ]
+      },
+      {
+        "routeName": "CountryCityRoute",
+        "performance": {
+          "avgResponseTime": 39665.73,
+          "minResponseTime": 0.0,
+          "medResponseTime": 54420.0,
+          "maxResponseTime": 60000.37,
+          "p90ResponseTime": 58730.0,
+          "p95ResponseTime": 58870.0
+        },
+        "results": {
+          "successRate": 2.08,
+          "passRate": 0.0,
+          "totalRequests": 240,
+          "failedRequests": 235
+        },
+        "apis": [
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/countries",
+            "name": "Get Countries",
+            "successRate": 2.08,
+            "avgResponseTime": 39665.73,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.37,
+            "totalRequests": 240,
+            "failedRequests": 235
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/states",
+            "name": "Get States",
+            "successRate": 2.08,
+            "avgResponseTime": 39665.73,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.37,
+            "totalRequests": 240,
+            "failedRequests": 235
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/cities",
+            "name": "Get Cities",
+            "successRate": 2.08,
+            "avgResponseTime": 39665.73,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.37,
+            "totalRequests": 240,
+            "failedRequests": 235
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/city",
+            "name": "Get City",
+            "successRate": 2.08,
+            "avgResponseTime": 39665.73,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.37,
+            "totalRequests": 240,
+            "failedRequests": 235
+          }
+        ]
+      },
+      {
+        "routeName": "CreditNoteRoute",
+        "performance": {
+          "avgResponseTime": 2993.64,
+          "minResponseTime": 0.0,
+          "medResponseTime": 1160.0,
+          "maxResponseTime": 46517.35,
+          "p90ResponseTime": 5890.0,
+          "p95ResponseTime": 10000.0
+        },
+        "results": {
+          "successRate": 0.0,
+          "passRate": 0.0,
+          "totalRequests": 414,
+          "failedRequests": 414
+        },
+        "apis": [
+          {
+            "method": "POST",
+            "url": "https://pr.avidusinteractive.com/api/web/creditNote",
+            "name": "Create Credit Note",
+            "successRate": 0.0,
+            "avgResponseTime": 2993.64,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 46517.35,
+            "totalRequests": 414,
+            "failedRequests": 414
+          }
+        ]
+      },
+      {
+        "routeName": "DebitNoteRoute",
+        "performance": {
+          "avgResponseTime": 2441.11,
+          "minResponseTime": 0.0,
+          "medResponseTime": 1460.0,
+          "maxResponseTime": 60000.74,
+          "p90ResponseTime": 4550.0,
+          "p95ResponseTime": 6140.0
+        },
+        "results": {
+          "successRate": 0.0,
+          "passRate": 0.0,
+          "totalRequests": 4397,
+          "failedRequests": 4397
+        },
+        "apis": [
+          {
+            "method": "POST",
+            "url": "https://pr.avidusinteractive.com/api/web/debitNote",
+            "name": "Create Debit Note",
+            "successRate": 0.0,
+            "avgResponseTime": 2441.11,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.74,
+            "totalRequests": 4397,
+            "failedRequests": 4397
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/debitNote",
+            "name": "Get Debit Note",
+            "successRate": 0.0,
+            "avgResponseTime": 2441.11,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.74,
+            "totalRequests": 4397,
+            "failedRequests": 4397
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/debitNote/open-debit-invoices",
+            "name": "Get Open Debit Invoices",
+            "successRate": 0.0,
+            "avgResponseTime": 2441.11,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.74,
+            "totalRequests": 4397,
+            "failedRequests": 4397
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/debitNote",
+            "name": "Update Debit Note",
+            "successRate": 0.0,
+            "avgResponseTime": 2441.11,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.74,
+            "totalRequests": 4397,
+            "failedRequests": 4397
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/debitNote/getDebitNoteFromDmr",
+            "name": "Get Debit Note From DMR",
+            "successRate": 0.0,
+            "avgResponseTime": 2441.11,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.74,
+            "totalRequests": 4397,
+            "failedRequests": 4397
+          }
+        ]
+      },
+      {
+        "routeName": "DMREntryRoute",
+        "performance": {
+          "avgResponseTime": 1939.09,
+          "minResponseTime": 0.0,
+          "medResponseTime": 1100.0,
+          "maxResponseTime": 60001.88,
+          "p90ResponseTime": 4100.0,
+          "p95ResponseTime": 5630.0
+        },
+        "results": {
+          "successRate": 0.0,
+          "passRate": 0.0,
+          "totalRequests": 6336,
+          "failedRequests": 6336
+        },
+        "apis": [
+          {
+            "method": "POST",
+            "url": "https://pr.avidusinteractive.com/api/web/dmr_entry",
+            "name": "Create DMR Entry",
+            "successRate": 0.0,
+            "avgResponseTime": 1939.09,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60001.88,
+            "totalRequests": 6336,
+            "failedRequests": 6336
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/dmr_entry/updateDMREntries",
+            "name": "Update DMR Entries",
+            "successRate": 0.0,
+            "avgResponseTime": 1939.09,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60001.88,
+            "totalRequests": 6336,
+            "failedRequests": 6336
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/dmr_entry/open_challan",
+            "name": "Get Open Challan",
+            "successRate": 0.0,
+            "avgResponseTime": 1939.09,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60001.88,
+            "totalRequests": 6336,
+            "failedRequests": 6336
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/dmr_list",
+            "name": "Get DMR List",
+            "successRate": 0.0,
+            "avgResponseTime": 1939.09,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60001.88,
+            "totalRequests": 6336,
+            "failedRequests": 6336
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/dmr_purchase_order/check-duplicate-invoice",
+            "name": "Check Duplicate Invoice",
+            "successRate": 0.0,
+            "avgResponseTime": 1939.09,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60001.88,
+            "totalRequests": 6336,
+            "failedRequests": 6336
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/dmr_purchase_order/check-duplicate-challan",
+            "name": "Check Duplicate Challan",
+            "successRate": 0.0,
+            "avgResponseTime": 1939.09,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60001.88,
+            "totalRequests": 6336,
+            "failedRequests": 6336
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/dmr_entry_status",
+            "name": "Get DMR Entry Status",
+            "successRate": 0.0,
+            "avgResponseTime": 1939.09,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60001.88,
+            "totalRequests": 6336,
+            "failedRequests": 6336
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/dmr_entry/validate-gate-entry",
+            "name": "Validate Gate Entry",
+            "successRate": 0.0,
+            "avgResponseTime": 1939.09,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60001.88,
+            "totalRequests": 6336,
+            "failedRequests": 6336
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/dmr_entry",
+            "name": "Update DMR Entry",
+            "successRate": 0.0,
+            "avgResponseTime": 1939.09,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60001.88,
+            "totalRequests": 6336,
+            "failedRequests": 6336
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/getDMRNumber",
+            "name": "Get DMR Number",
+            "successRate": 0.0,
+            "avgResponseTime": 1939.09,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60001.88,
+            "totalRequests": 6336,
+            "failedRequests": 6336
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/getDMRNumberList",
+            "name": "Get DMR Number List",
+            "successRate": 0.0,
+            "avgResponseTime": 1939.09,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60001.88,
+            "totalRequests": 6336,
+            "failedRequests": 6336
+          }
+        ]
+      },
+      {
+        "routeName": "DMRPurchaseOrderRoute",
+        "performance": {
+          "avgResponseTime": 15505.5,
+          "minResponseTime": 0.0,
+          "medResponseTime": 8030.0,
+          "maxResponseTime": 60009.61,
+          "p90ResponseTime": 48530.0,
+          "p95ResponseTime": 55540.0
+        },
+        "results": {
+          "successRate": 38.72,
+          "passRate": 0.0,
+          "totalRequests": 1317,
+          "failedRequests": 807
+        },
+        "apis": [
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/dmr_purchase_order",
+            "name": "Get DMR Purchase Order",
+            "successRate": 38.72,
+            "avgResponseTime": 15505.5,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60009.61,
+            "totalRequests": 1317,
+            "failedRequests": 807
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/dmr_purchase_order",
+            "name": "Update DMR Purchase Order",
+            "successRate": 38.72,
+            "avgResponseTime": 15505.5,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60009.61,
+            "totalRequests": 1317,
+            "failedRequests": 807
+          },
+          {
+            "method": "POST",
+            "url": "https://pr.avidusinteractive.com/api/web/dmr_purchase_order",
+            "name": "Create DMR Purchase Order",
+            "successRate": 38.72,
+            "avgResponseTime": 15505.5,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60009.61,
+            "totalRequests": 1317,
+            "failedRequests": 807
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/dmr_purchase_order/detailsByPO",
+            "name": "Get Details By PO",
+            "successRate": 38.72,
+            "avgResponseTime": 15505.5,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60009.61,
+            "totalRequests": 1317,
+            "failedRequests": 807
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/dmr_purchase_order/open-po",
+            "name": "Get Open PO",
+            "successRate": 38.72,
+            "avgResponseTime": 15505.5,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60009.61,
+            "totalRequests": 1317,
+            "failedRequests": 807
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/dmr_purchase_order/details",
+            "name": "Get DMR PO Details",
+            "successRate": 38.72,
+            "avgResponseTime": 15505.5,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60009.61,
+            "totalRequests": 1317,
+            "failedRequests": 807
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/dmr_purchase_order/hold-dmr",
+            "name": "Hold DMR",
+            "successRate": 38.72,
+            "avgResponseTime": 15505.5,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60009.61,
+            "totalRequests": 1317,
+            "failedRequests": 807
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/dmr_purchase_order/update-closing/:id",
+            "name": "Update Closing",
+            "successRate": 38.72,
+            "avgResponseTime": 15505.5,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60009.61,
+            "totalRequests": 1317,
+            "failedRequests": 807
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/dmr_purchase_order/order-status-count",
+            "name": "Get Order Status Count",
+            "successRate": 38.72,
+            "avgResponseTime": 15505.5,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60009.61,
+            "totalRequests": 1317,
+            "failedRequests": 807
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/dmr/getUniquePRNumber",
+            "name": "Get Unique PR Number",
+            "successRate": 38.72,
+            "avgResponseTime": 15505.5,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60009.61,
+            "totalRequests": 1317,
+            "failedRequests": 807
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/dmr/getUniquePONumber",
+            "name": "Get Unique PO Number",
+            "successRate": 38.72,
+            "avgResponseTime": 15505.5,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60009.61,
+            "totalRequests": 1317,
+            "failedRequests": 807
+          }
+        ]
+      },
+      {
+        "routeName": "GSTRoute",
+        "performance": {
+          "avgResponseTime": 7497.26,
+          "minResponseTime": 0.0,
+          "medResponseTime": 3530.62,
+          "maxResponseTime": 60000.58,
+          "p90ResponseTime": 20580.0,
+          "p95ResponseTime": 27250.0
+        },
+        "results": {
+          "successRate": 85.12,
+          "passRate": 0.0,
+          "totalRequests": 1405,
+          "failedRequests": 209
+        },
+        "apis": [
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/gst",
+            "name": "Get GST",
+            "successRate": 85.12,
+            "avgResponseTime": 7497.26,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.58,
+            "totalRequests": 1405,
+            "failedRequests": 209
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/gst/detail",
+            "name": "Get GST Detail",
+            "successRate": 85.12,
+            "avgResponseTime": 7497.26,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.58,
+            "totalRequests": 1405,
+            "failedRequests": 209
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/gst",
+            "name": "Update GST",
+            "successRate": 85.12,
+            "avgResponseTime": 7497.26,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.58,
+            "totalRequests": 1405,
+            "failedRequests": 209
+          },
+          {
+            "method": "POST",
+            "url": "https://pr.avidusinteractive.com/api/web/gst",
+            "name": "Create GST",
+            "successRate": 85.12,
+            "avgResponseTime": 7497.26,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.58,
+            "totalRequests": 1405,
+            "failedRequests": 209
+          },
+          {
+            "method": "DELETE",
+            "url": "https://pr.avidusinteractive.com/api/web/gst",
+            "name": "Delete GST",
+            "successRate": 85.12,
+            "avgResponseTime": 7497.26,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.58,
+            "totalRequests": 1405,
+            "failedRequests": 209
+          }
+        ]
+      },
+      {
+        "routeName": "ImprestDMREntryRoute",
+        "performance": {
+          "avgResponseTime": 1801.84,
+          "minResponseTime": 0.0,
+          "medResponseTime": 1080.0,
+          "maxResponseTime": 60000.3,
+          "p90ResponseTime": 3930.0,
+          "p95ResponseTime": 5470.0
+        },
+        "results": {
+          "successRate": 0.0,
+          "passRate": 0.0,
+          "totalRequests": 4336,
+          "failedRequests": 4336
+        },
+        "apis": [
+          {
+            "method": "POST",
+            "url": "https://pr.avidusinteractive.com/api/web/imprest_dmr_entry",
+            "name": "Create Imprest DMR Entry",
+            "successRate": 0.0,
+            "avgResponseTime": 1801.84,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.3,
+            "totalRequests": 4336,
+            "failedRequests": 4336
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/imprest_dmr_list/uniqueDMRNumber",
+            "name": "Get Unique DMR Number",
+            "successRate": 0.0,
+            "avgResponseTime": 1801.84,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.3,
+            "totalRequests": 4336,
+            "failedRequests": 4336
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/imprest_dmr_list",
+            "name": "Get Imprest DMR List",
+            "successRate": 0.0,
+            "avgResponseTime": 1801.84,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.3,
+            "totalRequests": 4336,
+            "failedRequests": 4336
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/imprest_dmr_list/check-duplicate-bill",
+            "name": "Check Duplicate Bill",
+            "successRate": 0.0,
+            "avgResponseTime": 1801.84,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.3,
+            "totalRequests": 4336,
+            "failedRequests": 4336
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/imprest_dmr_entry",
+            "name": "Update Imprest DMR Entry",
+            "successRate": 0.0,
+            "avgResponseTime": 1801.84,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.3,
+            "totalRequests": 4336,
+            "failedRequests": 4336
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/imprest_dmr_entry/doc_submission",
+            "name": "Document Submission",
+            "successRate": 0.0,
+            "avgResponseTime": 1801.84,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.3,
+            "totalRequests": 4336,
+            "failedRequests": 4336
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/imprest_dmr_entry/detail",
+            "name": "Get Imprest DMR Detail",
+            "successRate": 0.0,
+            "avgResponseTime": 1801.84,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.3,
+            "totalRequests": 4336,
+            "failedRequests": 4336
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/getImprestNumberBySite",
+            "name": "Get Imprest Number By Site",
+            "successRate": 0.0,
+            "avgResponseTime": 1801.84,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.3,
+            "totalRequests": 4336,
+            "failedRequests": 4336
+          }
+        ]
+      },
+      {
+        "routeName": "InventoryRoute",
+        "performance": {
+          "avgResponseTime": 15120.3,
+          "minResponseTime": 0.0,
+          "medResponseTime": 0.0,
+          "maxResponseTime": 60002.87,
+          "p90ResponseTime": 54350.0,
+          "p95ResponseTime": 57710.0
+        },
+        "results": {
+          "successRate": 4.61,
+          "passRate": 0.0,
+          "totalRequests": 477,
+          "failedRequests": 455
+        },
+        "apis": [
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/inventory",
+            "name": "Get Inventory",
+            "successRate": 4.61,
+            "avgResponseTime": 15120.3,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60002.87,
+            "totalRequests": 477,
+            "failedRequests": 455
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/inventory/search",
+            "name": "Search Inventory",
+            "successRate": 4.61,
+            "avgResponseTime": 15120.3,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60002.87,
+            "totalRequests": 477,
+            "failedRequests": 455
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/inventory-report",
+            "name": "Get Inventory Report",
+            "successRate": 4.61,
+            "avgResponseTime": 15120.3,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60002.87,
+            "totalRequests": 477,
+            "failedRequests": 455
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/inventory-issued-stock",
+            "name": "Get Issued Stock",
+            "successRate": 4.61,
+            "avgResponseTime": 15120.3,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60002.87,
+            "totalRequests": 477,
+            "failedRequests": 455
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/inventory-received-stock",
+            "name": "Get Received Stock",
+            "successRate": 4.61,
+            "avgResponseTime": 15120.3,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60002.87,
+            "totalRequests": 477,
+            "failedRequests": 455
+          }
+        ]
+      },
+      {
+        "routeName": "MaterialIssueSlipRoute",
+        "performance": {
+          "avgResponseTime": 1400.27,
+          "minResponseTime": 0.0,
+          "medResponseTime": 1030.0,
+          "maxResponseTime": 56321.2,
+          "p90ResponseTime": 2740.0,
+          "p95ResponseTime": 3560.0
+        },
+        "results": {
+          "successRate": 0.0,
+          "passRate": 0.0,
+          "totalRequests": 1560,
+          "failedRequests": 1560
+        },
+        "apis": [
+          {
+            "method": "POST",
+            "url": "https://pr.avidusinteractive.com/api/web/material_issue_slip",
+            "name": "Create Material Issue Slip",
+            "successRate": 0.0,
+            "avgResponseTime": 1400.27,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 56321.2,
+            "totalRequests": 1560,
+            "failedRequests": 1560
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/issue-slip-number",
+            "name": "Get Issue Slip Number",
+            "successRate": 0.0,
+            "avgResponseTime": 1400.27,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 56321.2,
+            "totalRequests": 1560,
+            "failedRequests": 1560
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/issued_material_record",
+            "name": "Get Issued Material Record",
+            "successRate": 0.0,
+            "avgResponseTime": 1400.27,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 56321.2,
+            "totalRequests": 1560,
+            "failedRequests": 1560
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/issued_material_record/details",
+            "name": "Get Issued Material Details",
+            "successRate": 0.0,
+            "avgResponseTime": 1400.27,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 56321.2,
+            "totalRequests": 1560,
+            "failedRequests": 1560
+          }
+        ]
+      },
+      {
+        "routeName": "InventoryTransferRoute",
+        "performance": {
+          "avgResponseTime": 1500.4,
+          "minResponseTime": 0.0,
+          "medResponseTime": 1050.0,
+          "maxResponseTime": 60000.55,
+          "p90ResponseTime": 2910.0,
+          "p95ResponseTime": 4250.0
+        },
+        "results": {
+          "successRate": 0.0,
+          "passRate": 0.0,
+          "totalRequests": 3701,
+          "failedRequests": 3701
+        },
+        "apis": [
+          {
+            "method": "POST",
+            "url": "https://pr.avidusinteractive.com/api/web/inventory-transfer/create_request",
+            "name": "Create Transfer Request",
+            "successRate": 0.0,
+            "avgResponseTime": 1500.4,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.55,
+            "totalRequests": 3701,
+            "failedRequests": 3701
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/inventory-transfer/approve",
+            "name": "Approve Transfer",
+            "successRate": 0.0,
+            "avgResponseTime": 1500.4,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.55,
+            "totalRequests": 3701,
+            "failedRequests": 3701
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/inventory-transfer/dispatch",
+            "name": "Dispatch Transfer",
+            "successRate": 0.0,
+            "avgResponseTime": 1500.4,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.55,
+            "totalRequests": 3701,
+            "failedRequests": 3701
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/inventory-transfer/receive",
+            "name": "Receive Transfer",
+            "successRate": 0.0,
+            "avgResponseTime": 1500.4,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.55,
+            "totalRequests": 3701,
+            "failedRequests": 3701
+          },
+          {
+            "method": "DELETE",
+            "url": "https://pr.avidusinteractive.com/api/web/inventory-transfer/cancel/:id",
+            "name": "Cancel Transfer",
+            "successRate": 0.0,
+            "avgResponseTime": 1500.4,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.55,
+            "totalRequests": 3701,
+            "failedRequests": 3701
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/inventory-transfer/details",
+            "name": "Get Transfer Details",
+            "successRate": 0.0,
+            "avgResponseTime": 1500.4,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.55,
+            "totalRequests": 3701,
+            "failedRequests": 3701
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/inventory-transfer",
+            "name": "Get Inventory Transfer",
+            "successRate": 0.0,
+            "avgResponseTime": 1500.4,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.55,
+            "totalRequests": 3701,
+            "failedRequests": 3701
+          }
+        ]
+      },
+      {
+        "routeName": "ItemRoute",
+        "performance": {
+          "avgResponseTime": 13642.07,
+          "minResponseTime": 0.0,
+          "medResponseTime": 0.0,
+          "maxResponseTime": 58864.93,
+          "p90ResponseTime": 56550.0,
+          "p95ResponseTime": 57760.0
+        },
+        "results": {
+          "successRate": 0.0,
+          "passRate": 0.0,
+          "totalRequests": 684,
+          "failedRequests": 684
+        },
+        "apis": [
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/item",
+            "name": "Get Item",
+            "successRate": 0.0,
+            "avgResponseTime": 13642.07,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 58864.93,
+            "totalRequests": 684,
+            "failedRequests": 684
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/item/getItemNumber",
+            "name": "Get Item Number",
+            "successRate": 0.0,
+            "avgResponseTime": 13642.07,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 58864.93,
+            "totalRequests": 684,
+            "failedRequests": 684
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/item/detail",
+            "name": "Get Item Detail",
+            "successRate": 0.0,
+            "avgResponseTime": 13642.07,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 58864.93,
+            "totalRequests": 684,
+            "failedRequests": 684
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/item",
+            "name": "Update Item",
+            "successRate": 0.0,
+            "avgResponseTime": 13642.07,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 58864.93,
+            "totalRequests": 684,
+            "failedRequests": 684
+          },
+          {
+            "method": "POST",
+            "url": "https://pr.avidusinteractive.com/api/web/item",
+            "name": "Create Item",
+            "successRate": 0.0,
+            "avgResponseTime": 13642.07,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 58864.93,
+            "totalRequests": 684,
+            "failedRequests": 684
+          },
+          {
+            "method": "DELETE",
+            "url": "https://pr.avidusinteractive.com/api/web/item",
+            "name": "Delete Item",
+            "successRate": 0.0,
+            "avgResponseTime": 13642.07,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 58864.93,
+            "totalRequests": 684,
+            "failedRequests": 684
+          },
+          {
+            "method": "POST",
+            "url": "https://pr.avidusinteractive.com/api/web/item/upload-csv",
+            "name": "Upload CSV",
+            "successRate": 0.0,
+            "avgResponseTime": 13642.07,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 58864.93,
+            "totalRequests": 684,
+            "failedRequests": 684
+          }
+        ]
+      },
+      {
+        "routeName": "LineGraphRoute",
+        "performance": {
+          "avgResponseTime": 13788.18,
+          "minResponseTime": 0.0,
+          "medResponseTime": 0.0,
+          "maxResponseTime": 60000.19,
+          "p90ResponseTime": 48260.0,
+          "p95ResponseTime": 54300.0
+        },
+        "results": {
+          "successRate": 19.14,
+          "passRate": 0.0,
+          "totalRequests": 303,
+          "failedRequests": 245
+        },
+        "apis": [
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/lineGraph",
+            "name": "Get Line Graph",
+            "successRate": 19.14,
+            "avgResponseTime": 13788.18,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.19,
+            "totalRequests": 303,
+            "failedRequests": 245
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/lineGraph/63e32cab6277aaaaf9ece187",
+            "name": "Get Line Graph By ID",
+            "successRate": 19.14,
+            "avgResponseTime": 13788.18,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.19,
+            "totalRequests": 303,
+            "failedRequests": 245
+          },
+          {
+            "method": "POST",
+            "url": "https://pr.avidusinteractive.com/api/web/lineGraph/date-filter",
+            "name": "Filter By Date",
+            "successRate": 19.14,
+            "avgResponseTime": 13788.18,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.19,
+            "totalRequests": 303,
+            "failedRequests": 245
+          }
+        ]
+      },
+      {
+        "routeName": "LocationRoute",
+        "performance": {
+          "avgResponseTime": 13327.75,
+          "minResponseTime": 0.0,
+          "medResponseTime": 0.0,
+          "maxResponseTime": 60001.33,
+          "p90ResponseTime": 42590.0,
+          "p95ResponseTime": 46520.0
+        },
+        "results": {
+          "successRate": 33.84,
+          "passRate": 0.0,
+          "totalRequests": 597,
+          "failedRequests": 395
+        },
+        "apis": [
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/location",
+            "name": "Get Location",
+            "successRate": 33.84,
+            "avgResponseTime": 13327.75,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60001.33,
+            "totalRequests": 597,
+            "failedRequests": 395
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/location/detail",
+            "name": "Get Location Detail",
+            "successRate": 33.84,
+            "avgResponseTime": 13327.75,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60001.33,
+            "totalRequests": 597,
+            "failedRequests": 395
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/location",
+            "name": "Update Location",
+            "successRate": 33.84,
+            "avgResponseTime": 13327.75,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60001.33,
+            "totalRequests": 597,
+            "failedRequests": 395
+          },
+          {
+            "method": "POST",
+            "url": "https://pr.avidusinteractive.com/api/web/location",
+            "name": "Create Location",
+            "successRate": 33.84,
+            "avgResponseTime": 13327.75,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60001.33,
+            "totalRequests": 597,
+            "failedRequests": 395
+          },
+          {
+            "method": "DELETE",
+            "url": "https://pr.avidusinteractive.com/api/web/location",
+            "name": "Delete Location",
+            "successRate": 33.84,
+            "avgResponseTime": 13327.75,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60001.33,
+            "totalRequests": 597,
+            "failedRequests": 395
+          }
+        ]
+      },
+      {
+        "routeName": "MasterSubTasksRoute",
+        "performance": {
+          "avgResponseTime": 12950.76,
+          "minResponseTime": 0.0,
+          "medResponseTime": 0.0,
+          "maxResponseTime": 60000.64,
+          "p90ResponseTime": 43780.0,
+          "p95ResponseTime": 48660.0
+        },
+        "results": {
+          "successRate": 28.02,
+          "passRate": 0.0,
+          "totalRequests": 678,
+          "failedRequests": 488
+        },
+        "apis": [
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/masterSubTasks",
+            "name": "Get Master Sub Tasks",
+            "successRate": 28.02,
+            "avgResponseTime": 12950.76,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.64,
+            "totalRequests": 678,
+            "failedRequests": 488
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/masterSubTasks/63e32cab6277aaaaf9ece185",
+            "name": "Get Master Sub Task By ID",
+            "successRate": 28.02,
+            "avgResponseTime": 12950.76,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.64,
+            "totalRequests": 678,
+            "failedRequests": 488
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/masterSubTasks/63e32cab6277aaaaf9ece185",
+            "name": "Update Master Sub Task",
+            "successRate": 28.02,
+            "avgResponseTime": 12950.76,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.64,
+            "totalRequests": 678,
+            "failedRequests": 488
+          },
+          {
+            "method": "POST",
+            "url": "https://pr.avidusinteractive.com/api/web/masterSubTasks",
+            "name": "Create Master Sub Task",
+            "successRate": 28.02,
+            "avgResponseTime": 12950.76,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.64,
+            "totalRequests": 678,
+            "failedRequests": 488
+          },
+          {
+            "method": "DELETE",
+            "url": "https://pr.avidusinteractive.com/api/web/masterSubTasks/63e32cab6277aaaaf9ece185",
+            "name": "Delete Master Sub Task By ID",
+            "successRate": 28.02,
+            "avgResponseTime": 12950.76,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.64,
+            "totalRequests": 678,
+            "failedRequests": 488
+          },
+          {
+            "method": "DELETE",
+            "url": "https://pr.avidusinteractive.com/api/web/masterSubTasks",
+            "name": "Delete Master Sub Tasks",
+            "successRate": 28.02,
+            "avgResponseTime": 12950.76,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60000.64,
+            "totalRequests": 678,
+            "failedRequests": 488
+          }
+        ]
+      }
+    ],
+    "additionalResults": [
+      {
+        "routeName": "RateApprovalRoute",
+        "performance": {
+          "avgResponseTime": 28317.03,
+          "minResponseTime": 0.0,
+          "medResponseTime": 21080.0,
+          "maxResponseTime": 60002.89,
+          "p90ResponseTime": 59430.0,
+          "p95ResponseTime": 60000.0
+        },
+        "results": {
+          "successRate": 2.74,
+          "passRate": 0.0,
+          "totalRequests": 1349,
+          "failedRequests": 1312
+        },
+        "apis": [
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/rate-approval",
+            "name": "Get Rate Approval",
+            "successRate": 2.74,
+            "avgResponseTime": 28317.03,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60002.89,
+            "totalRequests": 1349,
+            "failedRequests": 1312
+          },
+          {
+            "method": "POST",
+            "url": "https://pr.avidusinteractive.com/api/web/rate-approval/split-comparitive",
+            "name": "Split Comparative Rate Approval",
+            "successRate": 2.74,
+            "avgResponseTime": 28317.03,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60002.89,
+            "totalRequests": 1349,
+            "failedRequests": 1312
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/rate-approval/getUniquePRNumber",
+            "name": "Get Unique PR Number",
+            "successRate": 2.74,
+            "avgResponseTime": 28317.03,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60002.89,
+            "totalRequests": 1349,
+            "failedRequests": 1312
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/pending-rate-approval",
+            "name": "Get Pending Rate Approval",
+            "successRate": 2.74,
+            "avgResponseTime": 28317.03,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60002.89,
+            "totalRequests": 1349,
+            "failedRequests": 1312
+          },
+          {
+            "method": "POST",
+            "url": "https://pr.avidusinteractive.com/api/web/rate-approval-reject",
+            "name": "Rate Approval Reject",
+            "successRate": 2.74,
+            "avgResponseTime": 28317.03,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60002.89,
+            "totalRequests": 1349,
+            "failedRequests": 1312
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/rate-approval/getPendingCategoryList",
+            "name": "Get Pending Category List",
+            "successRate": 2.74,
+            "avgResponseTime": 28317.03,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60002.89,
+            "totalRequests": 1349,
+            "failedRequests": 1312
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/rate-approval/getPendingPRs",
+            "name": "Get Pending PRs",
+            "successRate": 2.74,
+            "avgResponseTime": 28317.03,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60002.89,
+            "totalRequests": 1349,
+            "failedRequests": 1312
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/rate-approval/detail",
+            "name": "Get Rate Approval Detail",
+            "successRate": 2.74,
+            "avgResponseTime": 28317.03,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60002.89,
+            "totalRequests": 1349,
+            "failedRequests": 1312
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/rate-approval-status/",
+            "name": "Get Rate Approval Status",
+            "successRate": 2.74,
+            "avgResponseTime": 28317.03,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60002.89,
+            "totalRequests": 1349,
+            "failedRequests": 1312
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/rate-approval/getDetailsByPR",
+            "name": "Get Rate Approval Details By PR",
+            "successRate": 2.74,
+            "avgResponseTime": 28317.03,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60002.89,
+            "totalRequests": 1349,
+            "failedRequests": 1312
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/rate-approval",
+            "name": "Update Rate Approval",
+            "successRate": 2.74,
+            "avgResponseTime": 28317.03,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60002.89,
+            "totalRequests": 1349,
+            "failedRequests": 1312
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/rate-approval/Upload-files",
+            "name": "Upload Rate Approval Files",
+            "successRate": 2.74,
+            "avgResponseTime": 28317.03,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60002.89,
+            "totalRequests": 1349,
+            "failedRequests": 1312
+          },
+          {
+            "method": "DELETE",
+            "url": "https://pr.avidusinteractive.com/api/web/rate-approval",
+            "name": "Delete Rate Approval",
+            "successRate": 2.74,
+            "avgResponseTime": 28317.03,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60002.89,
+            "totalRequests": 1349,
+            "failedRequests": 1312
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/rate-approval/merge-rate-comparatives",
+            "name": "Merge Rate Comparatives",
+            "successRate": 2.74,
+            "avgResponseTime": 28317.03,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60002.89,
+            "totalRequests": 1349,
+            "failedRequests": 1312
+          },
+          {
+            "method": "DELETE",
+            "url": "https://pr.avidusinteractive.com/api/web/rate-approval/markLocalPurchase",
+            "name": "Mark Local Purchase",
+            "successRate": 2.74,
+            "avgResponseTime": 28317.03,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60002.89,
+            "totalRequests": 1349,
+            "failedRequests": 1312
+          }
+        ]
+      },
+      {
+        "routeName": "UtilityRoute",
+        "performance": {
+          "avgResponseTime": 6682.74,
+          "minResponseTime": 0.0,
+          "medResponseTime": 251.46,
+          "maxResponseTime": 32503.49,
+          "p90ResponseTime": 16760.0,
+          "p95ResponseTime": 17340.0
+        },
+        "results": {
+          "successRate": 0.0,
+          "passRate": 0.0,
+          "totalRequests": 1558,
+          "failedRequests": 1558
+        },
+        "apis": [
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/vendor-quotations",
+            "name": "Get Vendor Quotations",
+            "successRate": 0.0,
+            "avgResponseTime": 6682.74,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 32503.49,
+            "totalRequests": 1558,
+            "failedRequests": 1558
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/dmr-documents",
+            "name": "Get DMR Documents",
+            "successRate": 0.0,
+            "avgResponseTime": 6682.74,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 32503.49,
+            "totalRequests": 1558,
+            "failedRequests": 1558
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/debitNotes/credit-notes",
+            "name": "Get Credit Notes",
+            "successRate": 0.0,
+            "avgResponseTime": 6682.74,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 32503.49,
+            "totalRequests": 1558,
+            "failedRequests": 1558
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/credit-notes-zip",
+            "name": "Get Credit Notes ZIP",
+            "successRate": 0.0,
+            "avgResponseTime": 6682.74,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 32503.49,
+            "totalRequests": 1558,
+            "failedRequests": 1558
+          }
+        ]
+      },
+      {
+        "routeName": "UsersRoute",
+        "performance": {
+          "avgResponseTime": 22754.81,
+          "minResponseTime": 0.0,
+          "medResponseTime": 30030.0,
+          "maxResponseTime": 52243.0,
+          "p90ResponseTime": 49220.0,
+          "p95ResponseTime": 50440.0
+        },
+        "results": {
+          "successRate": 70.78,
+          "passRate": 0.0,
+          "totalRequests": 989,
+          "failedRequests": 289
+        },
+        "apis": [
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/users",
+            "name": "Get Users",
+            "successRate": 70.78,
+            "avgResponseTime": 22754.81,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 52243.0,
+            "totalRequests": 989,
+            "failedRequests": 289
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/users/63e32cab6277aaaaf9ece185",
+            "name": "Get User By ID",
+            "successRate": 70.78,
+            "avgResponseTime": 22754.81,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 52243.0,
+            "totalRequests": 989,
+            "failedRequests": 289
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/users/63e32cab6277aaaaf9ece185",
+            "name": "Update User",
+            "successRate": 70.78,
+            "avgResponseTime": 22754.81,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 52243.0,
+            "totalRequests": 989,
+            "failedRequests": 289
+          },
+          {
+            "method": "POST",
+            "url": "https://pr.avidusinteractive.com/api/web/users",
+            "name": "Create User",
+            "successRate": 70.78,
+            "avgResponseTime": 22754.81,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 52243.0,
+            "totalRequests": 989,
+            "failedRequests": 289
+          },
+          {
+            "method": "DELETE",
+            "url": "https://pr.avidusinteractive.com/api/web/users/63e32cab6277aaaaf9ece185",
+            "name": "Delete User",
+            "successRate": 70.78,
+            "avgResponseTime": 22754.81,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 52243.0,
+            "totalRequests": 989,
+            "failedRequests": 289
+          },
+          {
+            "method": "DELETE",
+            "url": "https://pr.avidusinteractive.com/api/web/users",
+            "name": "Delete Users Batch",
+            "successRate": 70.78,
+            "avgResponseTime": 22754.81,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 52243.0,
+            "totalRequests": 989,
+            "failedRequests": 289
+          },
+          {
+            "method": "POST",
+            "url": "https://pr.avidusinteractive.com/api/web/users/register",
+            "name": "User Register",
+            "successRate": 70.78,
+            "avgResponseTime": 22754.81,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 52243.0,
+            "totalRequests": 989,
+            "failedRequests": 289
+          },
+          {
+            "method": "POST",
+            "url": "https://pr.avidusinteractive.com/api/web/users/login",
+            "name": "User Login",
+            "successRate": 70.78,
+            "avgResponseTime": 22754.81,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 52243.0,
+            "totalRequests": 989,
+            "failedRequests": 289
+          }
+        ]
+      },
+      {
+        "routeName": "VendorRoute",
+        "performance": {
+          "avgResponseTime": 19738.79,
+          "minResponseTime": 0.0,
+          "medResponseTime": 22090.0,
+          "maxResponseTime": 39023.0,
+          "p90ResponseTime": 34620.0,
+          "p95ResponseTime": 35310.0
+        },
+        "results": {
+          "successRate": 76.95,
+          "passRate": 0.0,
+          "totalRequests": 1037,
+          "failedRequests": 239
+        },
+        "apis": [
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/vendor",
+            "name": "Get Vendor",
+            "successRate": 76.95,
+            "avgResponseTime": 19738.79,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 39023.0,
+            "totalRequests": 1037,
+            "failedRequests": 239
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/vendorCode",
+            "name": "Get Vendor Code",
+            "successRate": 76.95,
+            "avgResponseTime": 19738.79,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 39023.0,
+            "totalRequests": 1037,
+            "failedRequests": 239
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/vendor/detail",
+            "name": "Get Vendor Detail",
+            "successRate": 76.95,
+            "avgResponseTime": 19738.79,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 39023.0,
+            "totalRequests": 1037,
+            "failedRequests": 239
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/vendor",
+            "name": "Update Vendor",
+            "successRate": 76.95,
+            "avgResponseTime": 19738.79,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 39023.0,
+            "totalRequests": 1037,
+            "failedRequests": 239
+          },
+          {
+            "method": "POST",
+            "url": "https://pr.avidusinteractive.com/api/web/vendor",
+            "name": "Create Vendor",
+            "successRate": 76.95,
+            "avgResponseTime": 19738.79,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 39023.0,
+            "totalRequests": 1037,
+            "failedRequests": 239
+          },
+          {
+            "method": "DELETE",
+            "url": "https://pr.avidusinteractive.com/api/web/vendor",
+            "name": "Delete Vendor",
+            "successRate": 76.95,
+            "avgResponseTime": 19738.79,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 39023.0,
+            "totalRequests": 1037,
+            "failedRequests": 239
+          },
+          {
+            "method": "POST",
+            "url": "https://pr.avidusinteractive.com/api/web/vendor/upload-csv",
+            "name": "Vendor Upload CSV",
+            "successRate": 76.95,
+            "avgResponseTime": 19738.79,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 39023.0,
+            "totalRequests": 1037,
+            "failedRequests": 239
+          }
+        ]
+      },
+      {
+        "routeName": "UOMRoute",
+        "performance": {
+          "avgResponseTime": 6138.75,
+          "minResponseTime": 0.0,
+          "medResponseTime": 252.05,
+          "maxResponseTime": 23982.25,
+          "p90ResponseTime": 16600.0,
+          "p95ResponseTime": 16980.0
+        },
+        "results": {
+          "successRate": 37.14,
+          "passRate": 0.0,
+          "totalRequests": 2135,
+          "failedRequests": 1342
+        },
+        "apis": [
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/uom",
+            "name": "Get UOM",
+            "successRate": 37.14,
+            "avgResponseTime": 6138.75,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 23982.25,
+            "totalRequests": 2135,
+            "failedRequests": 1342
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/uom/detail",
+            "name": "Get UOM Detail",
+            "successRate": 37.14,
+            "avgResponseTime": 6138.75,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 23982.25,
+            "totalRequests": 2135,
+            "failedRequests": 1342
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/uom",
+            "name": "Update UOM",
+            "successRate": 37.14,
+            "avgResponseTime": 6138.75,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 23982.25,
+            "totalRequests": 2135,
+            "failedRequests": 1342
+          },
+          {
+            "method": "POST",
+            "url": "https://pr.avidusinteractive.com/api/web/uom",
+            "name": "Create UOM",
+            "successRate": 37.14,
+            "avgResponseTime": 6138.75,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 23982.25,
+            "totalRequests": 2135,
+            "failedRequests": 1342
+          },
+          {
+            "method": "DELETE",
+            "url": "https://pr.avidusinteractive.com/api/web/uom",
+            "name": "Delete UOM",
+            "successRate": 37.14,
+            "avgResponseTime": 6138.75,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 23982.25,
+            "totalRequests": 2135,
+            "failedRequests": 1342
+          }
+        ]
+      },
+      {
+        "routeName": "TasksRoute",
+        "performance": {
+          "avgResponseTime": 7537.7,
+          "minResponseTime": 0.0,
+          "medResponseTime": 810.23,
+          "maxResponseTime": 31870.92,
+          "p90ResponseTime": 16630.0,
+          "p95ResponseTime": 17080.0
+        },
+        "results": {
+          "successRate": 47.94,
+          "passRate": 0.0,
+          "totalRequests": 2138,
+          "failedRequests": 1113
+        },
+        "apis": [
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/tasks",
+            "name": "Get Tasks",
+            "successRate": 47.94,
+            "avgResponseTime": 7537.7,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 31870.92,
+            "totalRequests": 2138,
+            "failedRequests": 1113
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/tasks/63e32cab6277aaaaf9ece185",
+            "name": "Get Task By ID",
+            "successRate": 47.94,
+            "avgResponseTime": 7537.7,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 31870.92,
+            "totalRequests": 2138,
+            "failedRequests": 1113
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/tasks/63e32cab6277aaaaf9ece185",
+            "name": "Update Task",
+            "successRate": 47.94,
+            "avgResponseTime": 7537.7,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 31870.92,
+            "totalRequests": 2138,
+            "failedRequests": 1113
+          },
+          {
+            "method": "POST",
+            "url": "https://pr.avidusinteractive.com/api/web/tasks",
+            "name": "Create Task",
+            "successRate": 47.94,
+            "avgResponseTime": 7537.7,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 31870.92,
+            "totalRequests": 2138,
+            "failedRequests": 1113
+          },
+          {
+            "method": "DELETE",
+            "url": "https://pr.avidusinteractive.com/api/web/tasks/63e32cab6277aaaaf9ece185",
+            "name": "Delete Task",
+            "successRate": 47.94,
+            "avgResponseTime": 7537.7,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 31870.92,
+            "totalRequests": 2138,
+            "failedRequests": 1113
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/tasks/tasksList/63e32cab6277aaaaf9ece185",
+            "name": "Get Tasks List",
+            "successRate": 47.94,
+            "avgResponseTime": 7537.7,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 31870.92,
+            "totalRequests": 2138,
+            "failedRequests": 1113
+          }
+        ]
+      },
+      {
+        "routeName": "SubTasksRoute",
+        "performance": {
+          "avgResponseTime": 12982.12,
+          "minResponseTime": 0.0,
+          "medResponseTime": 18980.0,
+          "maxResponseTime": 34945.91,
+          "p90ResponseTime": 32090.0,
+          "p95ResponseTime": 33140.0
+        },
+        "results": {
+          "successRate": 51.49,
+          "passRate": 0.0,
+          "totalRequests": 2420,
+          "failedRequests": 1174
+        },
+        "apis": [
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/subTasks",
+            "name": "Get Sub Tasks",
+            "successRate": 51.49,
+            "avgResponseTime": 12982.12,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 34945.91,
+            "totalRequests": 2420,
+            "failedRequests": 1174
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/subTasks/activities/63e32cab6277aaaaf9ece185",
+            "name": "Get Sub Tasks Activities",
+            "successRate": 51.49,
+            "avgResponseTime": 12982.12,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 34945.91,
+            "totalRequests": 2420,
+            "failedRequests": 1174
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/subTasks/63e32cab6277aaaaf9ece185",
+            "name": "Get Sub Task By ID",
+            "successRate": 51.49,
+            "avgResponseTime": 12982.12,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 34945.91,
+            "totalRequests": 2420,
+            "failedRequests": 1174
+          },
+          {
+            "method": "POST",
+            "url": "https://pr.avidusinteractive.com/api/web/subTasks",
+            "name": "Create Sub Task",
+            "successRate": 51.49,
+            "avgResponseTime": 12982.12,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 34945.91,
+            "totalRequests": 2420,
+            "failedRequests": 1174
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/subTasks/63e32cab6277aaaaf9ece185",
+            "name": "Update Sub Task",
+            "successRate": 51.49,
+            "avgResponseTime": 12982.12,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 34945.91,
+            "totalRequests": 2420,
+            "failedRequests": 1174
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/subTasks/dailyTotalUpdate/63e32cab6277aaaaf9ece185",
+            "name": "Update Daily Total",
+            "successRate": 51.49,
+            "avgResponseTime": 12982.12,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 34945.91,
+            "totalRequests": 2420,
+            "failedRequests": 1174
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/subTasks/dailyTotalUpdate/update/63e32cab6277aaaaf9ece185",
+            "name": "Update Daily Total Advanced",
+            "successRate": 51.49,
+            "avgResponseTime": 12982.12,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 34945.91,
+            "totalRequests": 2420,
+            "failedRequests": 1174
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/subTasks/remarkUpdate/63e32cab6277aaaaf9ece185",
+            "name": "Update Remark",
+            "successRate": 51.49,
+            "avgResponseTime": 12982.12,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 34945.91,
+            "totalRequests": 2420,
+            "failedRequests": 1174
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/subTasks/remarks/63e32cab6277aaaaf9ece185",
+            "name": "Update Remarks",
+            "successRate": 51.49,
+            "avgResponseTime": 12982.12,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 34945.91,
+            "totalRequests": 2420,
+            "failedRequests": 1174
+          },
+          {
+            "method": "DELETE",
+            "url": "https://pr.avidusinteractive.com/api/web/subTasks/63e32cab6277aaaaf9ece185",
+            "name": "Delete Sub Task",
+            "successRate": 51.49,
+            "avgResponseTime": 12982.12,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 34945.91,
+            "totalRequests": 2420,
+            "failedRequests": 1174
+          },
+          {
+            "method": "DELETE",
+            "url": "https://pr.avidusinteractive.com/api/web/subTasks/deleteMany",
+            "name": "Delete Multiple Sub Tasks",
+            "successRate": 51.49,
+            "avgResponseTime": 12982.12,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 34945.91,
+            "totalRequests": 2420,
+            "failedRequests": 1174
+          }
+        ]
+      },
+      {
+        "routeName": "SubcategoryRoute",
+        "performance": {
+          "avgResponseTime": 9512.8,
+          "minResponseTime": 0.0,
+          "medResponseTime": 239.05,
+          "maxResponseTime": 34131.0,
+          "p90ResponseTime": 31870.0,
+          "p95ResponseTime": 32350.0
+        },
+        "results": {
+          "successRate": 34.34,
+          "passRate": 0.0,
+          "totalRequests": 1424,
+          "failedRequests": 935
+        },
+        "apis": [
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/subcategory",
+            "name": "Get Subcategory",
+            "successRate": 34.34,
+            "avgResponseTime": 9512.8,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 34131.0,
+            "totalRequests": 1424,
+            "failedRequests": 935
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/subcategory/detail",
+            "name": "Get Subcategory Detail",
+            "successRate": 34.34,
+            "avgResponseTime": 9512.8,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 34131.0,
+            "totalRequests": 1424,
+            "failedRequests": 935
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/subcategory",
+            "name": "Update Subcategory",
+            "successRate": 34.34,
+            "avgResponseTime": 9512.8,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 34131.0,
+            "totalRequests": 1424,
+            "failedRequests": 935
+          },
+          {
+            "method": "POST",
+            "url": "https://pr.avidusinteractive.com/api/web/subcategory",
+            "name": "Create Subcategory",
+            "successRate": 34.34,
+            "avgResponseTime": 9512.8,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 34131.0,
+            "totalRequests": 1424,
+            "failedRequests": 935
+          },
+          {
+            "method": "DELETE",
+            "url": "https://pr.avidusinteractive.com/api/web/subcategory",
+            "name": "Delete Subcategory",
+            "successRate": 34.34,
+            "avgResponseTime": 9512.8,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 34131.0,
+            "totalRequests": 1424,
+            "failedRequests": 935
+          }
+        ]
+      },
+      {
+        "routeName": "StructureRoute",
+        "performance": {
+          "avgResponseTime": 5888.93,
+          "minResponseTime": 0.0,
+          "medResponseTime": 731.95,
+          "maxResponseTime": 20107.84,
+          "p90ResponseTime": 15860.0,
+          "p95ResponseTime": 16110.0
+        },
+        "results": {
+          "successRate": 45.2,
+          "passRate": 0.0,
+          "totalRequests": 2259,
+          "failedRequests": 1238
+        },
+        "apis": [
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/structure",
+            "name": "Get Structure",
+            "successRate": 45.2,
+            "avgResponseTime": 5888.93,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 20107.84,
+            "totalRequests": 2259,
+            "failedRequests": 1238
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/structure/detail",
+            "name": "Get Structure Detail",
+            "successRate": 45.2,
+            "avgResponseTime": 5888.93,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 20107.84,
+            "totalRequests": 2259,
+            "failedRequests": 1238
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/structure",
+            "name": "Update Structure",
+            "successRate": 45.2,
+            "avgResponseTime": 5888.93,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 20107.84,
+            "totalRequests": 2259,
+            "failedRequests": 1238
+          },
+          {
+            "method": "POST",
+            "url": "https://pr.avidusinteractive.com/api/web/structure",
+            "name": "Create Structure",
+            "successRate": 45.2,
+            "avgResponseTime": 5888.93,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 20107.84,
+            "totalRequests": 2259,
+            "failedRequests": 1238
+          },
+          {
+            "method": "DELETE",
+            "url": "https://pr.avidusinteractive.com/api/web/structure",
+            "name": "Delete Structure",
+            "successRate": 45.2,
+            "avgResponseTime": 5888.93,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 20107.84,
+            "totalRequests": 2259,
+            "failedRequests": 1238
+          }
+        ]
+      },
+      {
+        "routeName": "SiteStaffRoute",
+        "performance": {
+          "avgResponseTime": 10780.83,
+          "minResponseTime": 0.0,
+          "medResponseTime": 563.52,
+          "maxResponseTime": 39257.67,
+          "p90ResponseTime": 31430.0,
+          "p95ResponseTime": 32070.0
+        },
+        "results": {
+          "successRate": 43.48,
+          "passRate": 0.0,
+          "totalRequests": 1580,
+          "failedRequests": 893
+        },
+        "apis": [
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/siteStaff",
+            "name": "Get Site Staff",
+            "successRate": 43.48,
+            "avgResponseTime": 10780.83,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 39257.67,
+            "totalRequests": 1580,
+            "failedRequests": 893
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/siteStaff/63e32cab6277aaaaf9ece185",
+            "name": "Get Site Staff By ID",
+            "successRate": 43.48,
+            "avgResponseTime": 10780.83,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 39257.67,
+            "totalRequests": 1580,
+            "failedRequests": 893
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/siteStaff",
+            "name": "Update Site Staff",
+            "successRate": 43.48,
+            "avgResponseTime": 10780.83,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 39257.67,
+            "totalRequests": 1580,
+            "failedRequests": 893
+          },
+          {
+            "method": "POST",
+            "url": "https://pr.avidusinteractive.com/api/web/siteStaff",
+            "name": "Create Site Staff",
+            "successRate": 43.48,
+            "avgResponseTime": 10780.83,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 39257.67,
+            "totalRequests": 1580,
+            "failedRequests": 893
+          },
+          {
+            "method": "DELETE",
+            "url": "https://pr.avidusinteractive.com/api/web/siteStaff",
+            "name": "Delete Site Staff",
+            "successRate": 43.48,
+            "avgResponseTime": 10780.83,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 39257.67,
+            "totalRequests": 1580,
+            "failedRequests": 893
+          },
+          {
+            "method": "POST",
+            "url": "https://pr.avidusinteractive.com/api/web/siteStaff/upload-csv",
+            "name": "Site Staff Upload CSV",
+            "successRate": 43.48,
+            "avgResponseTime": 10780.83,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 39257.67,
+            "totalRequests": 1580,
+            "failedRequests": 893
+          }
+        ]
+      },
+      {
+        "routeName": "SiteRoute",
+        "performance": {
+          "avgResponseTime": 9768.49,
+          "minResponseTime": 0.0,
+          "medResponseTime": 4742.84,
+          "maxResponseTime": 33146.04,
+          "p90ResponseTime": 27490.0,
+          "p95ResponseTime": 31240.0
+        },
+        "results": {
+          "successRate": 52.65,
+          "passRate": 0.0,
+          "totalRequests": 1455,
+          "failedRequests": 689
+        },
+        "apis": [
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/site",
+            "name": "Get Site",
+            "successRate": 52.65,
+            "avgResponseTime": 9768.49,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 33146.04,
+            "totalRequests": 1455,
+            "failedRequests": 689
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/site/detail",
+            "name": "Get Site Detail",
+            "successRate": 52.65,
+            "avgResponseTime": 9768.49,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 33146.04,
+            "totalRequests": 1455,
+            "failedRequests": 689
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/site",
+            "name": "Update Site",
+            "successRate": 52.65,
+            "avgResponseTime": 9768.49,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 33146.04,
+            "totalRequests": 1455,
+            "failedRequests": 689
+          },
+          {
+            "method": "POST",
+            "url": "https://pr.avidusinteractive.com/api/web/site",
+            "name": "Create Site",
+            "successRate": 52.65,
+            "avgResponseTime": 9768.49,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 33146.04,
+            "totalRequests": 1455,
+            "failedRequests": 689
+          },
+          {
+            "method": "DELETE",
+            "url": "https://pr.avidusinteractive.com/api/web/site",
+            "name": "Delete Site",
+            "successRate": 52.65,
+            "avgResponseTime": 9768.49,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 33146.04,
+            "totalRequests": 1455,
+            "failedRequests": 689
+          }
+        ]
+      },
+      {
+        "routeName": "RolesRoute",
+        "performance": {
+          "avgResponseTime": 5628.73,
+          "minResponseTime": 0.0,
+          "medResponseTime": 2160.0,
+          "maxResponseTime": 32100.6,
+          "p90ResponseTime": 16110.0,
+          "p95ResponseTime": 16580.0
+        },
+        "results": {
+          "successRate": 70.66,
+          "passRate": 0.0,
+          "totalRequests": 4496,
+          "failedRequests": 1319
+        },
+        "apis": [
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/roles",
+            "name": "Get Roles",
+            "successRate": 70.66,
+            "avgResponseTime": 5628.73,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 32100.6,
+            "totalRequests": 4496,
+            "failedRequests": 1319
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/roles/63e32cab6277aaaaf9ece185",
+            "name": "Get Role By ID",
+            "successRate": 70.66,
+            "avgResponseTime": 5628.73,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 32100.6,
+            "totalRequests": 4496,
+            "failedRequests": 1319
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/roles/role/admin",
+            "name": "Get Role By Name",
+            "successRate": 70.66,
+            "avgResponseTime": 5628.73,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 32100.6,
+            "totalRequests": 4496,
+            "failedRequests": 1319
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/roles/63e32cab6277aaaaf9ece185",
+            "name": "Update Role",
+            "successRate": 70.66,
+            "avgResponseTime": 5628.73,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 32100.6,
+            "totalRequests": 4496,
+            "failedRequests": 1319
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/roles/update-perm/admin",
+            "name": "Update Role Permissions",
+            "successRate": 70.66,
+            "avgResponseTime": 5628.73,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 32100.6,
+            "totalRequests": 4496,
+            "failedRequests": 1319
+          },
+          {
+            "method": "POST",
+            "url": "https://pr.avidusinteractive.com/api/web/roles",
+            "name": "Create Role",
+            "successRate": 70.66,
+            "avgResponseTime": 5628.73,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 32100.6,
+            "totalRequests": 4496,
+            "failedRequests": 1319
+          },
+          {
+            "method": "DELETE",
+            "url": "https://pr.avidusinteractive.com/api/web/roles/63e32cab6277aaaaf9ece185",
+            "name": "Delete Role",
+            "successRate": 70.66,
+            "avgResponseTime": 5628.73,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 32100.6,
+            "totalRequests": 4496,
+            "failedRequests": 1319
+          },
+          {
+            "method": "DELETE",
+            "url": "https://pr.avidusinteractive.com/api/web/roles",
+            "name": "Delete Roles Batch",
+            "successRate": 70.66,
+            "avgResponseTime": 5628.73,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 32100.6,
+            "totalRequests": 4496,
+            "failedRequests": 1319
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/user/permission",
+            "name": "Get User Permission",
+            "successRate": 70.66,
+            "avgResponseTime": 5628.73,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 32100.6,
+            "totalRequests": 4496,
+            "failedRequests": 1319
+          }
+        ]
+      },
+      {
+        "routeName": "MasterTasksRoute",
+        "performance": {
+          "avgResponseTime": 13293.04,
+          "minResponseTime": 0.0,
+          "medResponseTime": 0.0,
+          "maxResponseTime": 60002.05,
+          "p90ResponseTime": 47180.0,
+          "p95ResponseTime": 54030.0
+        },
+        "results": {
+          "successRate": 22.14,
+          "passRate": 0.0,
+          "totalRequests": 673,
+          "failedRequests": 524
+        },
+        "apis": [
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/masterTasks/all-tasks",
+            "name": "Get All Master Tasks",
+            "successRate": 22.14,
+            "avgResponseTime": 13293.04,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60002.05,
+            "totalRequests": 673,
+            "failedRequests": 524
+          },
+          {
+            "method": "GET",
+            "url": "https://pr.avidusinteractive.com/api/web/masterTasks/63e32cab6277aaaaf9ece185",
+            "name": "Get Master Task By ID",
+            "successRate": 22.14,
+            "avgResponseTime": 13293.04,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60002.05,
+            "totalRequests": 673,
+            "failedRequests": 524
+          },
+          {
+            "method": "PUT",
+            "url": "https://pr.avidusinteractive.com/api/web/masterTasks/63e32cab6277aaaaf9ece185",
+            "name": "Update Master Task",
+            "successRate": 22.14,
+            "avgResponseTime": 13293.04,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60002.05,
+            "totalRequests": 673,
+            "failedRequests": 524
+          },
+          {
+            "method": "POST",
+            "url": "https://pr.avidusinteractive.com/api/web/masterTasks",
+            "name": "Create Master Task",
+            "successRate": 22.14,
+            "avgResponseTime": 13293.04,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60002.05,
+            "totalRequests": 673,
+            "failedRequests": 524
+          },
+          {
+            "method": "DELETE",
+            "url": "https://pr.avidusinteractive.com/api/web/masterTasks/63e32cab6277aaaaf9ece185",
+            "name": "Delete Master Task",
+            "successRate": 22.14,
+            "avgResponseTime": 13293.04,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60002.05,
+            "totalRequests": 673,
+            "failedRequests": 524
+          },
+          {
+            "method": "DELETE",
+            "url": "https://pr.avidusinteractive.com/api/web/masterTasks",
+            "name": "Delete Master Tasks Batch",
+            "successRate": 22.14,
+            "avgResponseTime": 13293.04,
+            "minResponseTime": 0.0,
+            "maxResponseTime": 60002.05,
+            "totalRequests": 673,
+            "failedRequests": 524
+          }
+        ]
+      }
+    ]
+  }
+}
