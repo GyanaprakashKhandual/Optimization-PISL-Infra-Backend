@@ -1,0 +1,1951 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PISL API Documentation</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --bg-primary: #ffffff;
+        --bg-secondary: #fafafa;
+        --bg-tertiary: #f5f5f5;
+        --text-primary: #000000;
+        --text-secondary: #201d1d;
+        --text-tertiary: #171313;
+        --border-color: #e5e5e5;
+        --hover-bg: #f5f5f5;
+        --accent: #0070f3;
+        --accent-hover: #0761d1;
+        --success: #0070f3;
+        --warning: #f5a623;
+        --error: #e00;
+        --shadow: rgba(0, 0, 0, 0.05);
+      }
+
+      [data-theme="dark"] {
+        --bg-primary: #000000;
+        --bg-secondary: #111111;
+        --bg-tertiary: #1a1a1a;
+        --text-primary: #ffffff;
+        --text-secondary: #a0a0a0;
+        --text-tertiary: #666666;
+        --border-color: #333333;
+        --hover-bg: #1a1a1a;
+        --accent: #0070f3;
+        --accent-hover: #3291ff;
+        --success: #0070f3;
+        --warning: #f5a623;
+        --error: #e00;
+        --shadow: rgba(255, 255, 255, 0.05);
+      }
+
+      body {
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", sans-serif;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      /* Header */
+      header {
+        background-color: var(--bg-secondary);
+        border-bottom: 1px solid var(--border-color);
+        padding: 1rem 2rem;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .header-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: var(--text-primary);
+        text-decoration: none;
+      }
+
+      .logo-icon {
+        width: 40px;
+        height: 40px;
+        color: var(--accent);
+      }
+
+      .search-container {
+        flex: 1;
+        min-width: 200px;
+        max-width: 500px;
+        position: relative;
+      }
+
+      .search-input {
+        width: 100%;
+        padding: 0.75rem 1rem 0.75rem 2.5rem;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+      }
+
+      .search-input:focus {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(0, 112, 243, 0.1);
+      }
+
+      .search-icon {
+        position: absolute;
+        left: 0.75rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 18px;
+        height: 18px;
+        color: var(--text-tertiary);
+      }
+
+      .theme-toggle {
+        background: none;
+        border: 1px solid var(--border-color);
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-primary);
+        transition: all 0.3s ease;
+      }
+
+      .theme-toggle:hover {
+        background-color: var(--hover-bg);
+      }
+
+      /* Main Container */
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+
+      /* Sidebar Navigation */
+      .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        width: 280px;
+        background-color: var(--bg-secondary);
+        border-right: 1px solid var(--border-color);
+        overflow-y: auto;
+        padding-top: 80px;
+        z-index: 50;
+        transition: transform 0.3s ease;
+      }
+
+      .sidebar.closed {
+        transform: translateX(-100%);
+      }
+
+      .sidebar-content {
+        padding: 1.5rem 0;
+      }
+
+      .sidebar-section {
+        margin-bottom: 1.5rem;
+      }
+
+      .sidebar-title {
+        padding: 0 1.5rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--text-tertiary);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 0.75rem;
+      }
+
+      .sidebar-link {
+        display: block;
+        padding: 0.75rem 1.5rem;
+        color: var(--text-secondary);
+        text-decoration: none;
+        transition: all 0.2s ease;
+        font-size: 0.9rem;
+        border-left: 3px solid transparent;
+      }
+
+      .sidebar-link:hover,
+      .sidebar-link.active {
+        color: var(--accent);
+        background-color: var(--hover-bg);
+        border-left-color: var(--accent);
+      }
+
+      /* Main Content */
+      .main-content {
+        margin-left: 280px;
+        transition: margin-left 0.3s ease;
+      }
+
+      .main-content.full {
+        margin-left: 0;
+      }
+
+      /* Section */
+      .section {
+        margin-bottom: 3rem;
+        opacity: 0;
+      }
+
+      .section.visible {
+        opacity: 1;
+      }
+
+      .section-title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--text-primary);
+      }
+
+      .section-subtitle {
+        font-size: 0.95rem;
+        color: var(--text-secondary);
+        margin-bottom: 2rem;
+      }
+
+      /* API Routes Grid */
+      .routes-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      @media (max-width: 768px) {
+        .routes-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .route-card {
+        background-color: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 1.5rem;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .route-card:hover {
+        border-color: var(--accent);
+        box-shadow: 0 8px 24px var(--shadow);
+        transform: translateY(-4px);
+      }
+
+      .route-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--accent), transparent);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .route-card:hover::before {
+        opacity: 1;
+      }
+
+      .method-badge {
+        display: inline-block;
+        padding: 0.4rem 0.8rem;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 0.75rem;
+        margin-bottom: 1rem;
+      }
+
+      .method-get {
+        background-color: rgba(0, 112, 243, 0.1);
+        color: var(--accent);
+      }
+
+      .method-post {
+        background-color: rgba(79, 172, 254, 0.1);
+        color: #4facfe;
+      }
+
+      .method-put {
+        background-color: rgba(245, 166, 35, 0.1);
+        color: var(--warning);
+      }
+
+      .method-delete {
+        background-color: rgba(224, 0, 0, 0.1);
+        color: var(--error);
+      }
+
+      .route-endpoint {
+        font-family: "Monaco", "Courier New", monospace;
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        margin-bottom: 0.5rem;
+        word-break: break-all;
+      }
+
+      .route-url {
+        font-family: "Monaco", "Courier New", monospace;
+        font-size: 0.85rem;
+        color: var(--text-tertiary);
+        background-color: var(--bg-tertiary);
+        padding: 0.75rem;
+        border-radius: 6px;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem;
+        overflow-x: auto;
+      }
+
+      .url-text {
+        flex: 1;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+
+      .copy-button {
+        background: none;
+        border: none;
+        color: var(--text-secondary);
+        cursor: pointer;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition: all 0.2s ease;
+      }
+
+      .copy-button:hover {
+        color: var(--accent);
+      }
+
+      .copy-button.copied {
+        color: var(--success);
+      }
+
+      /* Icons */
+      .icon {
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+      }
+
+      /* Toggle Button */
+      .toggle-sidebar {
+        display: none;
+        background: none;
+        border: 1px solid var(--border-color);
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        cursor: pointer;
+        color: var(--text-primary);
+        margin-right: 1rem;
+      }
+
+      .toggle-sidebar:hover {
+        background-color: var(--hover-bg);
+      }
+
+      @media (max-width: 768px) {
+        .toggle-sidebar {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .sidebar {
+          width: 100%;
+          max-width: 280px;
+        }
+
+        .sidebar.closed {
+          transform: translateX(-100%);
+        }
+
+        .main-content {
+          margin-left: 0;
+        }
+
+        .header-content {
+          padding: 0;
+        }
+
+        .container {
+          padding: 1rem;
+        }
+
+        .search-container {
+          min-width: 150px;
+          max-width: 250px;
+        }
+
+        .logo {
+          font-size: 1.2rem;
+        }
+
+        .routes-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Animations */
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .section {
+        animation: slideIn 0.5s ease-out forwards;
+      }
+
+      .route-card {
+        animation: slideIn 0.5s ease-out forwards;
+      }
+
+      /* Loading State */
+      .loading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 200px;
+      }
+
+      .spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid var(--border-color);
+        border-top-color: var(--accent);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 1024px) {
+        .sidebar {
+          width: 240px;
+        }
+
+        .main-content {
+          margin-left: 240px;
+        }
+
+        .routes-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Scroll behavior */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: var(--bg-secondary);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: var(--border-color);
+        border-radius: 4px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--text-tertiary);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="header-content">
+        <button class="toggle-sidebar" id="toggleSidebar">
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <a href="#" class="logo">
+          <svg
+            class="logo-icon"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16 4L4 10V22L16 28L28 22V10L16 4Z"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M16 16L28 10M16 16L4 10M16 16V28"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <circle
+              cx="16"
+              cy="16"
+              r="3"
+              stroke="currentColor"
+              stroke-width="2"
+              fill="var(--accent)"
+            />
+          </svg>
+          <span>PISL API Document</span>
+        </a>
+
+        <div class="search-container">
+          <svg
+            class="search-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+          <input
+            type="text"
+            class="search-input"
+            id="searchInput"
+            placeholder="Search routes, methods..."
+          />
+        </div>
+
+        <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-content">
+        <div class="sidebar-section">
+          <div class="sidebar-title">Core</div>
+          <a href="#email" class="sidebar-link">Email</a>
+          <a href="#about" class="sidebar-link">About Us</a>
+          <a href="#misc" class="sidebar-link">Miscellaneous</a>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-title">Projects & Tasks</div>
+          <a href="#projects" class="sidebar-link">Projects</a>
+          <a href="#tasks" class="sidebar-link">Tasks</a>
+          <a href="#subtasks" class="sidebar-link">Sub Tasks</a>
+          <a href="#mastertasks" class="sidebar-link">Master Tasks</a>
+          <a href="#mastersubtasks" class="sidebar-link">Master Sub Tasks</a>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-title">Access Control</div>
+          <a href="#roles" class="sidebar-link">Roles</a>
+          <a href="#permissions" class="sidebar-link">Permissions</a>
+          <a href="#users" class="sidebar-link">Users</a>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-title">Site Management</div>
+          <a href="#site" class="sidebar-link">Site</a>
+          <a href="#sitestaff" class="sidebar-link">Site Staff</a>
+          <a href="#contractor" class="sidebar-link">Contractor</a>
+          <a href="#structure" class="sidebar-link">Structure</a>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-title">Inventory & Stock</div>
+          <a href="#inventory" class="sidebar-link">Inventory</a>
+          <a href="#inventoryout" class="sidebar-link">Inventory Out</a>
+          <a href="#inventory-transfer" class="sidebar-link">Transfer</a>
+          <a href="#item" class="sidebar-link">Item</a>
+          <a href="#location" class="sidebar-link">Location</a>
+          <a href="#uom" class="sidebar-link">UOM</a>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-title">Purchase & Procurement</div>
+          <a href="#purchase-request" class="sidebar-link">Purchase Request</a>
+          <a href="#rate-approval" class="sidebar-link">Rate Approval</a>
+          <a href="#purchase-order" class="sidebar-link">Purchase Order</a>
+          <a href="#vendor" class="sidebar-link">Vendor</a>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-title">DMR & Documentation</div>
+          <a href="#dmr-po" class="sidebar-link">DMR Purchase Order</a>
+          <a href="#dmr-entry" class="sidebar-link">DMR Entry</a>
+          <a href="#imprest-dmr" class="sidebar-link">Imprest DMR</a>
+          <a href="#debit-note" class="sidebar-link">Debit Note</a>
+          <a href="#credit-note" class="sidebar-link">Credit Note</a>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-title">Configuration</div>
+          <a href="#category" class="sidebar-link">Category</a>
+          <a href="#subcategory" class="sidebar-link">Sub Category</a>
+          <a href="#organisation" class="sidebar-link">Organisation</a>
+          <a href="#gst" class="sidebar-link">GST</a>
+          <a href="#brand" class="sidebar-link">Brand</a>
+          <a href="#activity" class="sidebar-link">Activity</a>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-title">Utilities</div>
+          <a href="#utility" class="sidebar-link">Utility Routes</a>
+          <a href="#upload" class="sidebar-link">Upload</a>
+          <a href="#countries" class="sidebar-link">Locations</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+      <div class="container" id="apiContent">
+        <div class="loading">
+          <div class="spinner"></div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      // SVG Icons
+      const icons = {
+        copy: '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>',
+        check:
+          '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>',
+        link: '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>',
+      };
+
+      // API Data
+      const apiData = {
+        email: {
+          title: "Email Routes",
+          routes: [
+            {
+              method: "POST",
+              endpoint: "/mail/template",
+              description: "Create email template",
+            },
+          ],
+        },
+        about: {
+          title: "About Us Routes",
+          routes: [
+            {
+              method: "GET",
+              endpoint: "/aboutUs",
+              description: "Get all about us content",
+            },
+            {
+              method: "GET",
+              endpoint: "/aboutUs/:id",
+              description: "Get about us by ID",
+            },
+            {
+              method: "PUT",
+              endpoint: "/aboutUs/:id",
+              description: "Update about us",
+            },
+            {
+              method: "POST",
+              endpoint: "/aboutUs",
+              description: "Create about us content",
+            },
+          ],
+        },
+        misc: {
+          title: "Miscellaneous Config Routes",
+          routes: [
+            {
+              method: "GET",
+              endpoint: "/miscellaneousConfig",
+              description: "Get all configs",
+            },
+            {
+              method: "GET",
+              endpoint: "/miscellaneousConfig/:type",
+              description: "Get config by type",
+            },
+            {
+              method: "PUT",
+              endpoint: "/miscellaneousConfig/:id",
+              description: "Update config",
+            },
+            {
+              method: "POST",
+              endpoint: "/miscellaneousConfig",
+              description: "Create config",
+            },
+          ],
+        },
+        projects: {
+          title: "Project Routes",
+          routes: [
+            {
+              method: "GET",
+              endpoint: "/projects",
+              description: "Get all projects",
+            },
+            {
+              method: "GET",
+              endpoint: "/projects/:id",
+              description: "Get project by ID",
+            },
+            {
+              method: "POST",
+              endpoint: "/projects",
+              description: "Create project",
+            },
+            {
+              method: "PUT",
+              endpoint: "/projects/updateMoreActivities/:id",
+              description: "Update project activities",
+            },
+            {
+              method: "PUT",
+              endpoint: "/projects/update-project/:id",
+              description: "Update project details",
+            },
+            {
+              method: "PUT",
+              endpoint: "/projects",
+              description: "Update project",
+            },
+            {
+              method: "PUT",
+              endpoint: "/projects/members/:id",
+              description: "Update project members",
+            },
+            {
+              method: "DELETE",
+              endpoint: "/projects/:id",
+              description: "Delete project",
+            },
+          ],
+        },
+        tasks: {
+          title: "Task Routes",
+          routes: [
+            { method: "GET", endpoint: "/tasks", description: "Get all tasks" },
+            {
+              method: "GET",
+              endpoint: "/tasks/:id",
+              description: "Get task by ID",
+            },
+            {
+              method: "PUT",
+              endpoint: "/tasks/:id",
+              description: "Update task",
+            },
+            { method: "POST", endpoint: "/tasks", description: "Create task" },
+            {
+              method: "DELETE",
+              endpoint: "/tasks/:id",
+              description: "Delete task",
+            },
+            {
+              method: "GET",
+              endpoint: "/tasks/tasksList/:id",
+              description: "Get tasks list",
+            },
+          ],
+        },
+        subtasks: {
+          title: "Sub Task Routes",
+          routes: [
+            {
+              method: "GET",
+              endpoint: "/subTasks",
+              description: "Get all sub tasks",
+            },
+            {
+              method: "GET",
+              endpoint: "/subTasks/activities/:id",
+              description: "Get sub task activities",
+            },
+            {
+              method: "GET",
+              endpoint: "/subTasks/:id",
+              description: "Get sub task by ID",
+            },
+            {
+              method: "POST",
+              endpoint: "/subTasks",
+              description: "Create sub task",
+            },
+            {
+              method: "PUT",
+              endpoint: "/subTasks/:id",
+              description: "Update sub task",
+            },
+            {
+              method: "DELETE",
+              endpoint: "/subTasks/:id",
+              description: "Delete sub task",
+            },
+            {
+              method: "DELETE",
+              endpoint: "/subTasks/deleteMany",
+              description: "Delete multiple sub tasks",
+            },
+          ],
+        },
+        mastertasks: {
+          title: "Master Task Routes",
+          routes: [
+            {
+              method: "GET",
+              endpoint: "/masterTasks/all-tasks",
+              description: "Get all master tasks",
+            },
+            {
+              method: "GET",
+              endpoint: "/masterTasks/:id",
+              description: "Get master task by ID",
+            },
+            {
+              method: "PUT",
+              endpoint: "/masterTasks/:id",
+              description: "Update master task",
+            },
+            {
+              method: "POST",
+              endpoint: "/masterTasks",
+              description: "Create master task",
+            },
+            {
+              method: "DELETE",
+              endpoint: "/masterTasks/:id",
+              description: "Delete master task",
+            },
+          ],
+        },
+        mastersubtasks: {
+          title: "Master Sub Task Routes",
+          routes: [
+            {
+              method: "GET",
+              endpoint: "/masterSubTasks",
+              description: "Get all master sub tasks",
+            },
+            {
+              method: "GET",
+              endpoint: "/masterSubTasks/:id",
+              description: "Get master sub task by ID",
+            },
+            {
+              method: "PUT",
+              endpoint: "/masterSubTasks/:id",
+              description: "Update master sub task",
+            },
+            {
+              method: "POST",
+              endpoint: "/masterSubTasks",
+              description: "Create master sub task",
+            },
+            {
+              method: "DELETE",
+              endpoint: "/masterSubTasks/:id",
+              description: "Delete master sub task",
+            },
+          ],
+        },
+        roles: {
+          title: "Role Routes",
+          routes: [
+            { method: "GET", endpoint: "/roles", description: "Get all roles" },
+            {
+              method: "GET",
+              endpoint: "/roles/:id",
+              description: "Get role by ID",
+            },
+            {
+              method: "GET",
+              endpoint: "/roles/role/:role",
+              description: "Get role by name",
+            },
+            {
+              method: "PUT",
+              endpoint: "/roles/:id",
+              description: "Update role",
+            },
+            {
+              method: "PUT",
+              endpoint: "/roles/update-perm/:role",
+              description: "Update role permissions",
+            },
+            { method: "POST", endpoint: "/roles", description: "Create role" },
+            {
+              method: "DELETE",
+              endpoint: "/roles/:id",
+              description: "Delete role",
+            },
+          ],
+        },
+        permissions: {
+          title: "Permission Routes",
+          routes: [
+            {
+              method: "GET",
+              endpoint: "/permissions",
+              description: "Get all permissions",
+            },
+            {
+              method: "GET",
+              endpoint: "/permissions/:id",
+              description: "Get permission by ID",
+            },
+            {
+              method: "PUT",
+              endpoint: "/permissions/:id",
+              description: "Update permission",
+            },
+            {
+              method: "POST",
+              endpoint: "/permissions",
+              description: "Create permission",
+            },
+            {
+              method: "DELETE",
+              endpoint: "/permissions/:id",
+              description: "Delete permission",
+            },
+          ],
+        },
+        users: {
+          title: "User Routes",
+          routes: [
+            { method: "GET", endpoint: "/users", description: "Get all users" },
+            {
+              method: "GET",
+              endpoint: "/users/:id",
+              description: "Get user by ID",
+            },
+            {
+              method: "PUT",
+              endpoint: "/users/:id",
+              description: "Update user",
+            },
+            { method: "POST", endpoint: "/users", description: "Create user" },
+            {
+              method: "DELETE",
+              endpoint: "/users/:id",
+              description: "Delete user",
+            },
+            {
+              method: "POST",
+              endpoint: "/users/register",
+              description: "Register new user",
+            },
+            {
+              method: "POST",
+              endpoint: "/users/login",
+              description: "User login",
+            },
+          ],
+        },
+        site: {
+          title: "Site Routes",
+          routes: [
+            { method: "GET", endpoint: "/site", description: "Get all sites" },
+            {
+              method: "GET",
+              endpoint: "/site/detail",
+              description: "Get site details",
+            },
+            { method: "PUT", endpoint: "/site", description: "Update site" },
+            { method: "POST", endpoint: "/site", description: "Create site" },
+            { method: "DELETE", endpoint: "/site", description: "Delete site" },
+          ],
+        },
+        sitestaff: {
+          title: "Site Staff Routes",
+          routes: [
+            {
+              method: "GET",
+              endpoint: "/siteStaff",
+              description: "Get all site staff",
+            },
+            {
+              method: "GET",
+              endpoint: "/siteStaff/:id",
+              description: "Get site staff by ID",
+            },
+            {
+              method: "PUT",
+              endpoint: "/siteStaff",
+              description: "Update site staff",
+            },
+            {
+              method: "POST",
+              endpoint: "/siteStaff",
+              description: "Create site staff",
+            },
+            {
+              method: "DELETE",
+              endpoint: "/siteStaff",
+              description: "Delete site staff",
+            },
+            {
+              method: "POST",
+              endpoint: "/siteStaff/upload-csv",
+              description: "Upload CSV",
+            },
+          ],
+        },
+        contractor: {
+          title: "Contractor Routes",
+          routes: [
+            {
+              method: "GET",
+              endpoint: "/contractor",
+              description: "Get all contractors",
+            },
+            {
+              method: "GET",
+              endpoint: "/contractor/:id",
+              description: "Get contractor by ID",
+            },
+            {
+              method: "PUT",
+              endpoint: "/contractor",
+              description: "Update contractor",
+            },
+            {
+              method: "POST",
+              endpoint: "/contractor",
+              description: "Create contractor",
+            },
+            {
+              method: "DELETE",
+              endpoint: "/contractor",
+              description: "Delete contractor",
+            },
+            {
+              method: "POST",
+              endpoint: "/contractor/upload-csv",
+              description: "Upload CSV",
+            },
+          ],
+        },
+        structure: {
+          title: "Structure Routes",
+          routes: [
+            {
+              method: "GET",
+              endpoint: "/structure",
+              description: "Get all structures",
+            },
+            {
+              method: "GET",
+              endpoint: "/structure/detail",
+              description: "Get structure details",
+            },
+            {
+              method: "PUT",
+              endpoint: "/structure",
+              description: "Update structure",
+            },
+            {
+              method: "POST",
+              endpoint: "/structure",
+              description: "Create structure",
+            },
+            {
+              method: "DELETE",
+              endpoint: "/structure",
+              description: "Delete structure",
+            },
+          ],
+        },
+        inventory: {
+          title: "Inventory Routes",
+          routes: [
+            {
+              method: "GET",
+              endpoint: "/inventory",
+              description: "Get inventory",
+            },
+            {
+              method: "GET",
+              endpoint: "/inventory/search",
+              description: "Search inventory",
+            },
+            {
+              method: "GET",
+              endpoint: "/inventory-report",
+              description: "Get inventory report",
+            },
+            {
+              method: "GET",
+              endpoint: "/inventory-issued-stock",
+              description: "Get issued stock",
+            },
+            {
+              method: "GET",
+              endpoint: "/inventory-received-stock",
+              description: "Get received stock",
+            },
+          ],
+        },
+        inventoryout: {
+          title: "Inventory Out Record Routes",
+          routes: [
+            {
+              method: "POST",
+              endpoint: "/material_issue_slip",
+              description: "Create material issue slip",
+            },
+            {
+              method: "GET",
+              endpoint: "/issue-slip-number",
+              description: "Get issue slip number",
+            },
+            {
+              method: "GET",
+              endpoint: "/issued_material_record",
+              description: "Get issued material records",
+            },
+            {
+              method: "GET",
+              endpoint: "/issued_material_record/details",
+              description: "Get issued material details",
+            },
+          ],
+        },
+        "inventory-transfer": {
+          title: "Inventory Transfer Routes",
+          routes: [
+            {
+              method: "POST",
+              endpoint: "/inventory-transfer/create_request",
+              description: "Create transfer request",
+            },
+            {
+              method: "PUT",
+              endpoint: "/inventory-transfer/approve",
+              description: "Approve transfer",
+            },
+            {
+              method: "PUT",
+              endpoint: "/inventory-transfer/dispatch",
+              description: "Dispatch transfer",
+            },
+            {
+              method: "PUT",
+              endpoint: "/inventory-transfer/receive",
+              description: "Receive transfer",
+            },
+            {
+              method: "DELETE",
+              endpoint: "/inventory-transfer/cancel/:id",
+              description: "Cancel transfer",
+            },
+            {
+              method: "GET",
+              endpoint: "/inventory-transfer/details",
+              description: "Get transfer details",
+            },
+            {
+              method: "GET",
+              endpoint: "/inventory-transfer",
+              description: "Get all transfers",
+            },
+          ],
+        },
+        item: {
+          title: "Item Routes",
+          routes: [
+            { method: "GET", endpoint: "/item", description: "Get all items" },
+            {
+              method: "GET",
+              endpoint: "/item/getItemNumber",
+              description: "Get item number",
+            },
+            {
+              method: "GET",
+              endpoint: "/item/detail",
+              description: "Get item details",
+            },
+            { method: "PUT", endpoint: "/item", description: "Update item" },
+            { method: "POST", endpoint: "/item", description: "Create item" },
+            { method: "DELETE", endpoint: "/item", description: "Delete item" },
+            {
+              method: "POST",
+              endpoint: "/item/upload-csv",
+              description: "Upload CSV",
+            },
+          ],
+        },
+        location: {
+          title: "Location Routes",
+          routes: [
+            {
+              method: "GET",
+              endpoint: "/location",
+              description: "Get all locations",
+            },
+            {
+              method: "GET",
+              endpoint: "/location/detail",
+              description: "Get location details",
+            },
+            {
+              method: "PUT",
+              endpoint: "/location",
+              description: "Update location",
+            },
+            {
+              method: "POST",
+              endpoint: "/location",
+              description: "Create location",
+            },
+            {
+              method: "DELETE",
+              endpoint: "/location",
+              description: "Delete location",
+            },
+          ],
+        },
+        uom: {
+          title: "UOM Routes",
+          routes: [
+            { method: "GET", endpoint: "/uom", description: "Get all UOM" },
+            {
+              method: "GET",
+              endpoint: "/uom/detail",
+              description: "Get UOM details",
+            },
+            { method: "PUT", endpoint: "/uom", description: "Update UOM" },
+            { method: "POST", endpoint: "/uom", description: "Create UOM" },
+            { method: "DELETE", endpoint: "/uom", description: "Delete UOM" },
+          ],
+        },
+        "purchase-request": {
+          title: "Purchase Request Routes",
+          routes: [
+            {
+              method: "GET",
+              endpoint: "/purchase-request",
+              description: "Get all purchase requests",
+            },
+            {
+              method: "GET",
+              endpoint: "/purchase-request-status/",
+              description: "Get PR status",
+            },
+            {
+              method: "GET",
+              endpoint: "/purchase-request/detail",
+              description: "Get PR details",
+            },
+            {
+              method: "PUT",
+              endpoint: "/purchase-request",
+              description: "Update PR",
+            },
+            {
+              method: "PUT",
+              endpoint: "/purchase-request/reject-request",
+              description: "Reject PR",
+            },
+            {
+              method: "POST",
+              endpoint: "/purchase-request",
+              description: "Create PR",
+            },
+            {
+              method: "DELETE",
+              endpoint: "/purchase-request",
+              description: "Delete PR",
+            },
+          ],
+        },
+        "rate-approval": {
+          title: "Rate Approval Routes",
+          routes: [
+            {
+              method: "GET",
+              endpoint: "/rate-approval",
+              description: "Get all rate approvals",
+            },
+            {
+              method: "POST",
+              endpoint: "/rate-approval/split-comparitive",
+              description: "Split comparative",
+            },
+            {
+              method: "GET",
+              endpoint: "/rate-approval/getUniquePRNumber",
+              description: "Get unique PR number",
+            },
+            {
+              method: "GET",
+              endpoint: "/pending-rate-approval",
+              description: "Get pending approvals",
+            },
+            {
+              method: "POST",
+              endpoint: "/rate-approval-reject",
+              description: "Reject approval",
+            },
+            {
+              method: "PUT",
+              endpoint: "/rate-approval",
+              description: "Update approval",
+            },
+            {
+              method: "DELETE",
+              endpoint: "/rate-approval",
+              description: "Delete approval",
+            },
+          ],
+        },
+        "purchase-order": {
+          title: "Purchase Order Routes",
+          routes: [
+            {
+              method: "GET",
+              endpoint: "/purchase_order",
+              description: "Get all POs",
+            },
+            {
+              method: "GET",
+              endpoint: "/purchase_order/detail",
+              description: "Get PO details",
+            },
+            {
+              method: "GET",
+              endpoint: "/getPONumber",
+              description: "Get PO number",
+            },
+            { method: "POST", endpoint: "/mergePO", description: "Merge PO" },
+            {
+              method: "PUT",
+              endpoint: "/purchase_order",
+              description: "Update PO",
+            },
+            {
+              method: "DELETE",
+              endpoint: "/purchase_order",
+              description: "Delete PO",
+            },
+          ],
+        },
+        vendor: {
+          title: "Vendor Routes",
+          routes: [
+            {
+              method: "GET",
+              endpoint: "/vendor",
+              description: "Get all vendors",
+            },
+            {
+              method: "GET",
+              endpoint: "/vendorCode",
+              description: "Get vendor code",
+            },
+            {
+              method: "GET",
+              endpoint: "/vendor/detail",
+              description: "Get vendor details",
+            },
+            {
+              method: "PUT",
+              endpoint: "/vendor",
+              description: "Update vendor",
+            },
+            {
+              method: "POST",
+              endpoint: "/vendor",
+              description: "Create vendor",
+            },
+            {
+              method: "DELETE",
+              endpoint: "/vendor",
+              description: "Delete vendor",
+            },
+            {
+              method: "POST",
+              endpoint: "/vendor/upload-csv",
+              description: "Upload CSV",
+            },
+          ],
+        },
+        "dmr-po": {
+          title: "DMR Purchase Order Routes",
+          routes: [
+            {
+              method: "GET",
+              endpoint: "/dmr_purchase_order",
+              description: "Get all DMR POs",
+            },
+            {
+              method: "PUT",
+              endpoint: "/dmr_purchase_order",
+              description: "Update DMR PO",
+            },
+            {
+              method: "POST",
+              endpoint: "/dmr_purchase_order",
+              description: "Create DMR PO",
+            },
+            {
+              method: "GET",
+              endpoint: "/dmr_purchase_order/detailsByPO",
+              description: "Get details by PO",
+            },
+            {
+              method: "GET",
+              endpoint: "/dmr_purchase_order/open-po",
+              description: "Get open PO",
+            },
+            {
+              method: "GET",
+              endpoint: "/dmr/getUniquePONumber",
+              description: "Get unique PO number",
+            },
+          ],
+        },
+        "dmr-entry": {
+          title: "DMR Entry Routes",
+          routes: [
+            {
+              method: "POST",
+              endpoint: "/dmr_entry",
+              description: "Create DMR entry",
+            },
+            {
+              method: "PUT",
+              endpoint: "/dmr_entry/updateDMREntries",
+              description: "Update DMR entries",
+            },
+            {
+              method: "GET",
+              endpoint: "/dmr_entry/open_challan",
+              description: "Get open challan",
+            },
+            {
+              method: "GET",
+              endpoint: "/dmr_list",
+              description: "Get DMR list",
+            },
+            {
+              method: "PUT",
+              endpoint: "/dmr_entry",
+              description: "Update DMR entry",
+            },
+            {
+              method: "GET",
+              endpoint: "/getDMRNumber",
+              description: "Get DMR number",
+            },
+          ],
+        },
+        "imprest-dmr": {
+          title: "Imprest DMR Entry Routes",
+          routes: [
+            {
+              method: "POST",
+              endpoint: "/imprest_dmr_entry",
+              description: "Create imprest DMR",
+            },
+            {
+              method: "GET",
+              endpoint: "/imprest_dmr_list/uniqueDMRNumber",
+              description: "Get unique DMR number",
+            },
+            {
+              method: "GET",
+              endpoint: "/imprest_dmr_list",
+              description: "Get imprest DMR list",
+            },
+            {
+              method: "PUT",
+              endpoint: "/imprest_dmr_entry",
+              description: "Update imprest DMR",
+            },
+            {
+              method: "GET",
+              endpoint: "/imprest_dmr_entry/detail",
+              description: "Get imprest DMR details",
+            },
+          ],
+        },
+        "debit-note": {
+          title: "Debit Note Routes",
+          routes: [
+            {
+              method: "POST",
+              endpoint: "/debitNote",
+              description: "Create debit note",
+            },
+            {
+              method: "GET",
+              endpoint: "/debitNote",
+              description: "Get all debit notes",
+            },
+            {
+              method: "GET",
+              endpoint: "/debitNote/open-debit-invoices",
+              description: "Get open debit invoices",
+            },
+            {
+              method: "PUT",
+              endpoint: "/debitNote",
+              description: "Update debit note",
+            },
+          ],
+        },
+        "credit-note": {
+          title: "Credit Note Routes",
+          routes: [
+            {
+              method: "POST",
+              endpoint: "/creditNote",
+              description: "Create credit note",
+            },
+          ],
+        },
+        category: {
+          title: "Category Routes",
+          routes: [
+            {
+              method: "GET",
+              endpoint: "/category",
+              description: "Get all categories",
+            },
+            {
+              method: "GET",
+              endpoint: "/category/detail",
+              description: "Get category details",
+            },
+            {
+              method: "PUT",
+              endpoint: "/category",
+              description: "Update category",
+            },
+            {
+              method: "POST",
+              endpoint: "/category",
+              description: "Create category",
+            },
+            {
+              method: "DELETE",
+              endpoint: "/category",
+              description: "Delete category",
+            },
+          ],
+        },
+        subcategory: {
+          title: "Sub Category Routes",
+          routes: [
+            {
+              method: "GET",
+              endpoint: "/subcategory",
+              description: "Get all sub categories",
+            },
+            {
+              method: "GET",
+              endpoint: "/subcategory/detail",
+              description: "Get sub category details",
+            },
+            {
+              method: "PUT",
+              endpoint: "/subcategory",
+              description: "Update sub category",
+            },
+            {
+              method: "POST",
+              endpoint: "/subcategory",
+              description: "Create sub category",
+            },
+            {
+              method: "DELETE",
+              endpoint: "/subcategory",
+              description: "Delete sub category",
+            },
+          ],
+        },
+        organisation: {
+          title: "Organisation Routes",
+          routes: [
+            {
+              method: "GET",
+              endpoint: "/organisation",
+              description: "Get all organisations",
+            },
+            {
+              method: "GET",
+              endpoint: "/organisation/detail",
+              description: "Get organisation details",
+            },
+            {
+              method: "PUT",
+              endpoint: "/organisation",
+              description: "Update organisation",
+            },
+            {
+              method: "POST",
+              endpoint: "/organisation",
+              description: "Create organisation",
+            },
+            {
+              method: "DELETE",
+              endpoint: "/organisation",
+              description: "Delete organisation",
+            },
+          ],
+        },
+        gst: {
+          title: "GST Routes",
+          routes: [
+            { method: "GET", endpoint: "/gst", description: "Get all GST" },
+            {
+              method: "GET",
+              endpoint: "/gst/detail",
+              description: "Get GST details",
+            },
+            { method: "PUT", endpoint: "/gst", description: "Update GST" },
+            { method: "POST", endpoint: "/gst", description: "Create GST" },
+            { method: "DELETE", endpoint: "/gst", description: "Delete GST" },
+          ],
+        },
+        brand: {
+          title: "Brand Routes",
+          routes: [
+            {
+              method: "GET",
+              endpoint: "/brand",
+              description: "Get all brands",
+            },
+            {
+              method: "GET",
+              endpoint: "/brand/detail",
+              description: "Get brand details",
+            },
+            { method: "PUT", endpoint: "/brand", description: "Update brand" },
+            { method: "POST", endpoint: "/brand", description: "Create brand" },
+            {
+              method: "DELETE",
+              endpoint: "/brand",
+              description: "Delete brand",
+            },
+          ],
+        },
+        activity: {
+          title: "Activity Routes",
+          routes: [
+            {
+              method: "GET",
+              endpoint: "/activity",
+              description: "Get all activities",
+            },
+            {
+              method: "GET",
+              endpoint: "/activity/detail",
+              description: "Get activity details",
+            },
+            {
+              method: "PUT",
+              endpoint: "/activity",
+              description: "Update activity",
+            },
+            {
+              method: "POST",
+              endpoint: "/activity",
+              description: "Create activity",
+            },
+            {
+              method: "DELETE",
+              endpoint: "/activity",
+              description: "Delete activity",
+            },
+          ],
+        },
+        utility: {
+          title: "Utility Routes",
+          routes: [
+            {
+              method: "GET",
+              endpoint: "/vendor-quotations",
+              description: "Download vendor quotations",
+            },
+            {
+              method: "GET",
+              endpoint: "/dmr-documents",
+              description: "Download DMR documents",
+            },
+            {
+              method: "GET",
+              endpoint: "/debitNotes/credit-notes",
+              description: "Download credit notes",
+            },
+            {
+              method: "GET",
+              endpoint: "/credit-notes-zip",
+              description: "Download credit notes ZIP",
+            },
+          ],
+        },
+        upload: {
+          title: "Upload Routes",
+          routes: [
+            {
+              method: "POST",
+              endpoint: "/upload_file",
+              description: "Upload file",
+            },
+          ],
+        },
+        countries: {
+          title: "Location Routes",
+          routes: [
+            {
+              method: "GET",
+              endpoint: "/countries",
+              description: "Get all countries",
+            },
+            {
+              method: "GET",
+              endpoint: "/states",
+              description: "Get all states",
+            },
+            {
+              method: "GET",
+              endpoint: "/cities",
+              description: "Get all cities",
+            },
+            { method: "GET", endpoint: "/city", description: "Get city" },
+          ],
+        },
+      };
+
+      const baseUrl = "https://pr.avidusinteractive.com/api/web";
+      let sidebarOpen = true;
+      let copiedId = null;
+
+      // Theme Toggle
+      const themeToggle = document.getElementById("themeToggle");
+      const html = document.documentElement;
+      const savedTheme = localStorage.getItem("theme") || "light";
+
+      html.setAttribute("data-theme", savedTheme);
+
+      themeToggle.addEventListener("click", () => {
+        const currentTheme = html.getAttribute("data-theme");
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+        html.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+      });
+
+      // Sidebar Toggle
+      const sidebar = document.getElementById("sidebar");
+      const mainContent = document.getElementById("mainContent");
+      const toggleBtn = document.getElementById("toggleSidebar");
+
+      toggleBtn.addEventListener("click", () => {
+        sidebarOpen = !sidebarOpen;
+        sidebar.classList.toggle("closed");
+        mainContent.classList.toggle("full");
+      });
+
+      // Close sidebar on mobile when clicking a link
+      const sidebarLinks = document.querySelectorAll(".sidebar-link");
+      sidebarLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          if (window.innerWidth <= 768) {
+            sidebarOpen = false;
+            sidebar.classList.add("closed");
+            mainContent.classList.add("full");
+          }
+        });
+      });
+
+      // Copy to Clipboard Function
+      function copyToClipboard(text, buttonElement) {
+        navigator.clipboard.writeText(text).then(() => {
+          const originalHTML = buttonElement.innerHTML;
+          buttonElement.innerHTML = icons.check;
+          buttonElement.classList.add("copied");
+
+          setTimeout(() => {
+            buttonElement.innerHTML = originalHTML;
+            buttonElement.classList.remove("copied");
+          }, 2000);
+        });
+      }
+
+      // Render API Content
+      function renderContent() {
+        const content = document.getElementById("apiContent");
+        let html = "";
+
+        for (const [key, section] of Object.entries(apiData)) {
+          html += `
+                    <section class="section" id="${key}">
+                        <h2 class="section-title">${section.title}</h2>
+                        <p class="section-subtitle">Complete API endpoints for ${section.title.toLowerCase()}</p>
+                        <div class="routes-grid">
+                `;
+
+          section.routes.forEach((route, index) => {
+            const fullUrl = baseUrl + route.endpoint;
+            const methodClass = `method-${route.method.toLowerCase()}`;
+
+            html += `
+                        <div class="route-card" data-method="${route.method}" data-endpoint="${route.endpoint}">
+                            <div class="method-badge ${methodClass}">${route.method}</div>
+                            <div class="route-endpoint">${route.endpoint}</div>
+                            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">${route.description}</p>
+                            <div class="route-url">
+                                <span class="url-text">${fullUrl}</span>
+                                <button class="copy-button" onclick="copyToClipboard('${fullUrl}', this)" title="Copy URL">
+                                    ${icons.copy}
+                                </button>
+                            </div>
+                        </div>
+                    `;
+          });
+
+          html += `
+                        </div>
+                    </section>
+                `;
+        }
+
+        content.innerHTML = html;
+
+        // Animate sections on load
+        const sections = document.querySelectorAll(".section");
+        sections.forEach((section, index) => {
+          section.style.animationDelay = `${index * 0.1}s`;
+          section.classList.add("visible");
+        });
+      }
+
+      // Search Functionality
+      const searchInput = document.getElementById("searchInput");
+      searchInput.addEventListener("input", (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        const sections = document.querySelectorAll(".section");
+
+        sections.forEach((section) => {
+          const routes = section.querySelectorAll(".route-card");
+          let visibleCount = 0;
+
+          routes.forEach((route) => {
+            const method = route.getAttribute("data-method").toLowerCase();
+            const endpoint = route.getAttribute("data-endpoint").toLowerCase();
+            const isVisible =
+              method.includes(searchTerm) || endpoint.includes(searchTerm);
+
+            route.style.display = isVisible ? "block" : "none";
+            if (isVisible) visibleCount++;
+          });
+
+          section.style.display = visibleCount > 0 ? "block" : "none";
+        });
+      });
+
+      // Initialize
+      document.addEventListener("DOMContentLoaded", () => {
+        renderContent();
+      });
+
+      // Responsive adjustments
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 768) {
+          sidebarOpen = true;
+          sidebar.classList.remove("closed");
+          mainContent.classList.remove("full");
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PISL - Load Test Report</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/framer-motion/10.16.4/framer-motion.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --bg-primary: #ffffff;
+        --bg-secondary: #fafafa;
+        --bg-tertiary: #f5f5f5;
+        --text-primary: #000000;
+        --text-secondary: #666666;
+        --text-tertiary: #999999;
+        --border-color: #e5e5e5;
+        --hover-bg: #f5f5f5;
+        --accent: #0070f3;
+        --accent-hover: #0761d1;
+        --success: #0070f3;
+        --warning: #f5a623;
+        --error: #e00;
+        --shadow: rgba(0, 0, 0, 0.05);
+      }
+
+      [data-theme="dark"] {
+        --bg-primary: #000000;
+        --bg-secondary: #111111;
+        --bg-tertiary: #1a1a1a;
+        --text-primary: #ffffff;
+        --text-secondary: #a0a0a0;
+        --text-tertiary: #666666;
+        --border-color: #333333;
+        --hover-bg: #1a1a1a;
+        --accent: #0070f3;
+        --accent-hover: #3291ff;
+        --success: #0070f3;
+        --warning: #f5a623;
+        --error: #e00;
+        --shadow: rgba(255, 255, 255, 0.05);
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+          "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+          "Helvetica Neue", sans-serif;
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        line-height: 1.6;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      .navbar {
+        position: sticky;
+        top: 0;
+        background-color: var(--bg-primary);
+        border-bottom: 1px solid var(--border-color);
+        padding: 0 1rem;
+        z-index: 1000;
+        backdrop-filter: blur(10px);
+        transition: background-color 0.3s ease;
+      }
+
+      .navbar-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.75rem 0;
+        flex-wrap: wrap;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 700;
+        font-size: 1.25rem;
+        color: var(--text-primary);
+        text-decoration: none;
+      }
+
+      .logo-icon {
+        width: 32px;
+        height: 32px;
+      }
+
+      .search-container {
+        flex: 1;
+        min-width: 200px;
+        max-width: 400px;
+      }
+
+      .search-input {
+        width: 100%;
+        padding: 0.5rem 1rem;
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+        background-color: var(--bg-secondary);
+        color: var(--text-primary);
+        font-size: 0.875rem;
+        transition: all 0.2s ease;
+      }
+
+      .search-input:focus {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(0, 112, 243, 0.1);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-button {
+        padding: 0.5rem 1rem;
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+        background-color: var(--bg-secondary);
+        color: var(--text-primary);
+        font-size: 0.875rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.2s ease;
+        white-space: nowrap;
+      }
+
+      .dropdown-button:hover {
+        background-color: var(--hover-bg);
+        border-color: var(--text-secondary);
+      }
+
+      .dropdown-content {
+        position: absolute;
+        top: calc(100% + 0.5rem);
+        left: 0;
+        background-color: var(--bg-primary);
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+        box-shadow: 0 4px 12px var(--shadow);
+        min-width: 200px;
+        max-height: 300px;
+        overflow-y: auto;
+        display: none;
+        z-index: 100;
+      }
+
+      .dropdown-content.show {
+        display: block;
+      }
+
+      .dropdown-item {
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .dropdown-item:hover {
+        background-color: var(--hover-bg);
+      }
+
+      .dropdown-item input[type="checkbox"] {
+        margin: 0;
+      }
+
+      .button {
+        padding: 0.5rem 1rem;
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        font-size: 0.875rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        text-decoration: none;
+        display: inline-block;
+        white-space: nowrap;
+      }
+
+      .button:hover {
+        background-color: var(--hover-bg);
+        border-color: var(--text-secondary);
+      }
+
+      .button-primary {
+        background-color: var(--accent);
+        color: white;
+        border-color: var(--accent);
+      }
+
+      .button-primary:hover {
+        background-color: var(--accent-hover);
+        border-color: var(--accent-hover);
+      }
+
+      .theme-toggle {
+        width: 40px;
+        height: 40px;
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+        background-color: var(--bg-secondary);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
+      }
+
+      .theme-toggle:hover {
+        background-color: var(--hover-bg);
+        border-color: var(--text-secondary);
+      }
+
+      .theme-toggle svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      .pagination-controls {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .pagination-info {
+        font-size: 0.875rem;
+        color: var(--text-secondary);
+        white-space: nowrap;
+      }
+
+      .container {
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .stats-container {
+        width: 100%;
+        margin: 0 auto 2rem;
+        padding: 10px 0;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .stat-card {
+        background-color: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 1.5rem;
+        transition: all 0.2s ease;
+      }
+
+      .stat-card:hover {
+        box-shadow: 0 4px 12px var(--shadow);
+        transform: translateY(-2px);
+      }
+
+      .stat-label {
+        font-size: 0.875rem;
+        color: var(--text-secondary);
+        margin-bottom: 0.5rem;
+      }
+
+      .stat-value {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--text-primary);
+      }
+
+      .table-container {
+        background-color: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .table-wrapper {
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      thead {
+        background-color: var(--bg-tertiary);
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      th {
+        padding: 1rem;
+        text-align: left;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--text-secondary);
+        white-space: nowrap;
+      }
+
+      td {
+        padding: 1rem;
+        border-bottom: 1px solid var(--border-color);
+        font-size: 0.875rem;
+      }
+
+      tr:last-child td {
+        border-bottom: none;
+      }
+
+      tbody tr {
+        transition: background-color 0.2s ease;
+      }
+
+      tbody tr:hover {
+        background-color: var(--hover-bg);
+      }
+
+      .tooltip {
+        position: absolute;
+        background-color: var(--bg-primary);
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+        padding: 0.75rem;
+        box-shadow: 0 4px 12px var(--shadow);
+        z-index: 1000;
+        display: none;
+        max-width: 500px;
+        word-break: break-all;
+      }
+
+      .tooltip.show {
+        display: block;
+      }
+
+      .tooltip-content {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+
+      .tooltip-url {
+        flex: 1;
+        font-size: 0.875rem;
+        color: var(--text-primary);
+        font-family: "Courier New", monospace;
+      }
+
+      .copy-button {
+        background-color: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+        border-radius: 4px;
+        padding: 0.25rem 0.5rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
+        flex-shrink: 0;
+      }
+
+      .copy-button:hover {
+        background-color: var(--hover-bg);
+        border-color: var(--accent);
+      }
+
+      .copy-button:active {
+        transform: scale(0.95);
+      }
+
+      .copy-button svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      .copy-button.copied {
+        background-color: var(--accent);
+        border-color: var(--accent);
+      }
+
+      .copy-button.copied svg {
+        color: white;
+      }
+
+      tbody tr {
+        position: relative;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+      .badge-success {
+        background-color: rgba(0, 112, 243, 0.1);
+        color: var(--success);
+      }
+
+      .badge-warning {
+        background-color: rgba(245, 166, 35, 0.1);
+        color: var(--warning);
+      }
+
+      .badge-error {
+        background-color: rgba(238, 0, 0, 0.1);
+        color: var(--error);
+      }
+
+      .badge-method {
+        background-color: var(--bg-tertiary);
+        color: var(--text-primary);
+        border: 1px solid var(--border-color);
+      }
+
+      .empty-state {
+        text-align: center;
+        padding: 4rem 2rem;
+        color: var(--text-secondary);
+      }
+
+      .empty-state-icon {
+        width: 64px;
+        height: 64px;
+        margin: 0 auto 1rem;
+        opacity: 0.5;
+      }
+
+      .loading {
+        text-align: center;
+        padding: 4rem 2rem;
+        color: var(--text-secondary);
+      }
+
+      @media (max-width: 1024px) {
+        .navbar-container {
+          gap: 0.75rem;
+        }
+
+        .search-container {
+          order: 10;
+          flex: 1 1 100%;
+          max-width: 100%;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .dropdown-button,
+        .button {
+          padding: 0.5rem 0.75rem;
+          font-size: 0.8rem;
+        }
+
+        .logo {
+          font-size: 1rem;
+        }
+
+        .logo-icon {
+          width: 28px;
+          height: 28px;
+        }
+
+        th,
+        td {
+          padding: 0.75rem 0.5rem;
+        }
+
+        .stat-card {
+          padding: 1rem;
+        }
+
+        .stat-value {
+          font-size: 1.5rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .navbar-container {
+          gap: 0.5rem;
+        }
+
+        .pagination-controls {
+          flex-wrap: wrap;
+        }
+
+        .dropdown-button span {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body data-theme="light">
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="#" class="logo">
+          <svg
+            class="logo-icon"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16 4L4 10V22L16 28L28 22V10L16 4Z"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M16 16L28 10M16 16L4 10M16 16V28"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <circle
+              cx="16"
+              cy="16"
+              r="3"
+              stroke="currentColor"
+              stroke-width="2"
+              fill="var(--accent)"
+            />
+          </svg>
+          <span>PISL</span>
+        </a>
+
+        <div class="search-container">
+          <input
+            type="text"
+            id="searchInput"
+            class="search-input"
+            placeholder="Search routes, APIs, methods..."
+          />
+        </div>
+
+        <div class="dropdown" id="methodDropdown">
+          <button class="dropdown-button">
+            <span>Method</span>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path
+                d="M2.5 4.5L6 8L9.5 4.5"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <div class="dropdown-content">
+            <label class="dropdown-item">
+              <input type="checkbox" value="GET" checked /> GET
+            </label>
+            <label class="dropdown-item">
+              <input type="checkbox" value="POST" checked /> POST
+            </label>
+            <label class="dropdown-item">
+              <input type="checkbox" value="PUT" checked /> PUT
+            </label>
+            <label class="dropdown-item">
+              <input type="checkbox" value="DELETE" checked /> DELETE
+            </label>
+          </div>
+        </div>
+
+        <div class="dropdown" id="routeDropdown">
+          <button class="dropdown-button">
+            <span>Route</span>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path
+                d="M2.5 4.5L6 8L9.5 4.5"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <div class="dropdown-content" id="routeDropdownContent"></div>
+        </div>
+
+        <div class="dropdown" id="timeDropdown">
+          <button class="dropdown-button">
+            <span>Time</span>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path
+                d="M2.5 4.5L6 8L9.5 4.5"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <div class="dropdown-content">
+            <label class="dropdown-item">
+              <input type="radio" name="timeFilter" value="all" checked /> All
+              Times
+            </label>
+            <label class="dropdown-item">
+              <input type="radio" name="timeFilter" value="2000" />
+              < 2s
+            </label>
+            <label class="dropdown-item">
+              <input type="radio" name="timeFilter" value="4000" />
+              < 4s
+            </label>
+            <label class="dropdown-item">
+              <input type="radio" name="timeFilter" value="6000" />
+              < 6s
+            </label>
+            <label class="dropdown-item">
+              <input type="radio" name="timeFilter" value="10000" />
+              < 10s
+            </label>
+            <label class="dropdown-item">
+              <input type="radio" name="timeFilter" value="15000" />
+              < 15s
+            </label>
+          </div>
+        </div>
+
+        <button class="button" onclick="window.location.href='api.html'">
+          Documentation
+        </button>
+        <button class="button" onclick="window.location.href='doc.html'">
+          API Doc
+        </button>
+
+        <div class="pagination-controls">
+          <button class="button" id="prevBtn">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path
+                d="M7.5 9L4.5 6L7.5 3"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <span class="pagination-info" id="pageInfo">1-12 of 0</span>
+          <button class="button" id="nextBtn">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path
+                d="M4.5 3L7.5 6L4.5 9"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <button class="theme-toggle" id="themeToggle">
+          <svg
+            id="sunIcon"
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            style="display: block"
+          >
+            <circle
+              cx="10"
+              cy="10"
+              r="4"
+              stroke="currentColor"
+              stroke-width="1.5"
+            />
+            <path
+              d="M10 1V3M10 17V19M19 10H17M3 10H1M16.364 16.364L14.95 14.95M5.05 5.05L3.636 3.636M16.364 3.636L14.95 5.05M5.05 14.95L3.636 16.364"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+          </svg>
+          <svg
+            id="moonIcon"
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            style="display: none"
+          >
+            <path
+              d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="stats-container">
+        <div class="stats-grid" id="statsGrid"></div>
+      </div>
+
+      <div class="table-container">
+        <div class="table-wrapper">
+          <table id="dataTable">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Route Name</th>
+                <th>Method</th>
+                <th>API Name</th>
+                <th>Success Rate</th>
+                <th>Avg Response (s)</th>
+                <th>Min Response (s)</th>
+                <th>Med Response (s)</th>
+                <th>Max Response (s)</th>
+                <th>P90 Response (s)</th>
+                <th>P95 Response (s)</th>
+                <th>Total Requests</th>
+                <th>Failed</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody">
+              <tr>
+                <td colspan="13" class="loading">Loading data...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="tooltip" id="urlTooltip">
+      <div class="tooltip-content">
+        <div class="tooltip-url" id="tooltipUrl"></div>
+        <button class="copy-button" id="copyButton">
+          <svg viewBox="0 0 16 16" fill="none">
+            <path
+              d="M5.5 4.5H3.5C2.94772 4.5 2.5 4.94772 2.5 5.5V12.5C2.5 13.0523 2.94772 13.5 3.5 13.5H10.5C11.0523 13.5 11.5 13.0523 11.5 12.5V10.5"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M13.5 2.5H6.5C5.94772 2.5 5.5 2.94772 5.5 3.5V10.5C5.5 11.0523 5.94772 11.5 6.5 11.5H13.5C14.0523 11.5 14.5 11.0523 14.5 10.5V3.5C14.5 2.94772 14.0523 2.5 13.5 2.5Z"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <script>
+      let allData = [];
+      let filteredData = [];
+      let currentPage = 1;
+      const itemsPerPage = 12;
+
+      async function fetchData() {
+        try {
+          const response = await fetch("../data/api.data.json");
+          const jsonData = await response.json();
+
+          const flatData = [];
+          const routes = [
+            ...jsonData.loadTestResults.routes,
+            ...jsonData.loadTestResults.additionalResults,
+          ];
+
+          routes.forEach((route) => {
+            route.apis.forEach((api) => {
+              flatData.push({
+                routeName: route.routeName,
+                method: api.method,
+                apiName: api.name,
+                url: api.url,
+                successRate: api.successRate,
+                avgResponseTime: api.avgResponseTime,
+                minResponseTime: api.minResponseTime,
+                medResponseTime: route.performance.medResponseTime,
+                maxResponseTime: api.maxResponseTime,
+                p90ResponseTime: route.performance.p90ResponseTime,
+                p95ResponseTime: route.performance.p95ResponseTime,
+                totalRequests: api.totalRequests,
+                failedRequests: api.failedRequests,
+              });
+            });
+          });
+
+          allData = flatData;
+          filteredData = [...allData];
+
+          populateRouteDropdown();
+          updateStats();
+          renderTable();
+        } catch (error) {
+          console.error("Error fetching data:", error);
+          document.getElementById("tableBody").innerHTML = `
+                    <tr>
+                        <td colspan="13" class="empty-state">
+                            <div class="empty-state-icon">⚠️</div>
+                            <div>Error loading data. Please check the file path.</div>
+                        </td>
+                    </tr>
+                `;
+        }
+      }
+
+      function populateRouteDropdown() {
+        const routeNames = [...new Set(allData.map((item) => item.routeName))];
+        const content = routeNames
+          .map(
+            (route) => `
+                <label class="dropdown-item">
+                    <input type="checkbox" value="${route}" checked> ${route}
+                </label>
+            `
+          )
+          .join("");
+        document.getElementById("routeDropdownContent").innerHTML = content;
+
+        document
+          .querySelectorAll("#routeDropdownContent input")
+          .forEach((input) => {
+            input.addEventListener("change", applyFilters);
+          });
+      }
+
+      function updateStats() {
+        const totalRequests = filteredData.reduce(
+          (sum, item) => sum + item.totalRequests,
+          0
+        );
+        const totalFailed = filteredData.reduce(
+          (sum, item) => sum + item.failedRequests,
+          0
+        );
+        const avgSuccess =
+          filteredData.length > 0
+            ? (
+                filteredData.reduce((sum, item) => sum + item.successRate, 0) /
+                filteredData.length
+              ).toFixed(2)
+            : 0;
+        const avgResponse =
+          filteredData.length > 0
+            ? (
+                filteredData.reduce(
+                  (sum, item) => sum + item.avgResponseTime,
+                  0
+                ) /
+                filteredData.length /
+                1000
+              ).toFixed(3)
+            : 0;
+
+        document.getElementById("statsGrid").innerHTML = `
+                <div class="stat-card">
+                    <div class="stat-label">Total APIs</div>
+                    <div class="stat-value">${filteredData.length}</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Total Requests</div>
+                    <div class="stat-value">${totalRequests.toLocaleString()}</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Avg Success Rate</div>
+                    <div class="stat-value">${avgSuccess}%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Avg Response Time</div>
+                    <div class="stat-value">${avgResponse}s</div>
+                </div>
+            `;
+      }
+
+      function renderTable() {
+        const start = (currentPage - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+        const pageData = filteredData.slice(start, end);
+
+        if (pageData.length === 0) {
+          document.getElementById("tableBody").innerHTML = `
+                    <tr>
+                        <td colspan="13" class="empty-state">
+                            <div class="empty-state-icon">
+                                <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                                    <circle cx="32" cy="32" r="28" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M32 20V36M32 44V44.5" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <div>No data found matching your filters</div>
+                        </td>
+                    </tr>
+                `;
+        } else {
+          document.getElementById("tableBody").innerHTML = pageData
+            .map((item, index) => {
+              const successBadge =
+                item.successRate >= 90
+                  ? "badge-success"
+                  : item.successRate >= 50
+                  ? "badge-warning"
+                  : "badge-error";
+              const avgTimeInSeconds = (item.avgResponseTime / 1000).toFixed(3);
+              const minTimeInSeconds = (item.minResponseTime / 1000).toFixed(3);
+              const medTimeInSeconds = (item.medResponseTime / 1000).toFixed(3);
+              const maxTimeInSeconds = (item.maxResponseTime / 1000).toFixed(3);
+              const p90TimeInSeconds = (item.p90ResponseTime / 1000).toFixed(3);
+              const p95TimeInSeconds = (item.p95ResponseTime / 1000).toFixed(3);
+
+              return `
+                        <tr data-url="${item.url}">
+                            <td>${start + index + 1}</td>
+                            <td><strong>${item.routeName}</strong></td>
+                            <td><span class="badge badge-method">${
+                              item.method
+                            }</span></td>
+                            <td>${item.apiName}</td>
+                            <td><span class="badge ${successBadge}">${item.successRate.toFixed(
+                2
+              )}%</span></td>
+                            <td>${avgTimeInSeconds}s</td>
+                            <td>${minTimeInSeconds}s</td>
+                            <td>${medTimeInSeconds}s</td>
+                            <td>${maxTimeInSeconds}s</td>
+                            <td>${p90TimeInSeconds}s</td>
+                            <td>${p95TimeInSeconds}s</td>
+                            <td>${item.totalRequests.toLocaleString()}</td>
+                            <td>${item.failedRequests.toLocaleString()}</td>
+                        </tr>
+                    `;
+            })
+            .join("");
+
+          attachTooltipListeners();
+        }
+
+        updatePagination();
+      }
+
+      function attachTooltipListeners() {
+        const tooltip = document.getElementById("urlTooltip");
+        const tooltipUrl = document.getElementById("tooltipUrl");
+        const copyButton = document.getElementById("copyButton");
+        const rows = document.querySelectorAll("#tableBody tr[data-url]");
+
+        rows.forEach((row) => {
+          row.addEventListener("mouseenter", (e) => {
+            const url = row.getAttribute("data-url");
+            tooltipUrl.textContent = url;
+
+            const rect = row.getBoundingClientRect();
+            tooltip.style.left = `${e.clientX}px`;
+            tooltip.style.top = `${rect.bottom + window.scrollY + 10}px`;
+            tooltip.classList.add("show");
+
+            copyButton.classList.remove("copied");
+            copyButton.innerHTML = `
+                        <svg viewBox="0 0 16 16" fill="none">
+                            <path d="M5.5 4.5H3.5C2.94772 4.5 2.5 4.94772 2.5 5.5V12.5C2.5 13.0523 2.94772 13.5 3.5 13.5H10.5C11.0523 13.5 11.5 13.0523 11.5 12.5V10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M13.5 2.5H6.5C5.94772 2.5 5.5 2.94772 5.5 3.5V10.5C5.5 11.0523 5.94772 11.5 6.5 11.5H13.5C14.0523 11.5 14.5 11.0523 14.5 10.5V3.5C14.5 2.94772 14.0523 2.5 13.5 2.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    `;
+          });
+
+          row.addEventListener("mouseleave", () => {
+            tooltip.classList.remove("show");
+          });
+
+          row.addEventListener("mousemove", (e) => {
+            tooltip.style.left = `${e.clientX}px`;
+          });
+        });
+
+        copyButton.addEventListener("click", async (e) => {
+          e.stopPropagation();
+          const url = tooltipUrl.textContent;
+
+          try {
+            await navigator.clipboard.writeText(url);
+            copyButton.classList.add("copied");
+            copyButton.innerHTML = `
+                        <svg viewBox="0 0 16 16" fill="none">
+                            <path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    `;
+
+            setTimeout(() => {
+              copyButton.classList.remove("copied");
+              copyButton.innerHTML = `
+                            <svg viewBox="0 0 16 16" fill="none">
+                                <path d="M5.5 4.5H3.5C2.94772 4.5 2.5 4.94772 2.5 5.5V12.5C2.5 13.0523 2.94772 13.5 3.5 13.5H10.5C11.0523 13.5 11.5 13.0523 11.5 12.5V10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M13.5 2.5H6.5C5.94772 2.5 5.5 2.94772 5.5 3.5V10.5C5.5 11.0523 5.94772 11.5 6.5 11.5H13.5C14.0523 11.5 14.5 11.0523 14.5 10.5V3.5C14.5 2.94772 14.0523 2.5 13.5 2.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        `;
+            }, 2000);
+          } catch (err) {
+            console.error("Failed to copy:", err);
+          }
+        });
+      }
+
+      function updatePagination() {
+        const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+        const start = (currentPage - 1) * itemsPerPage + 1;
+        const end = Math.min(currentPage * itemsPerPage, filteredData.length);
+
+        document.getElementById(
+          "pageInfo"
+        ).textContent = `${start}-${end} of ${filteredData.length}`;
+        document.getElementById("prevBtn").disabled = currentPage === 1;
+        document.getElementById("nextBtn").disabled =
+          currentPage === totalPages || filteredData.length === 0;
+      }
+
+      function applyFilters() {
+        const searchTerm = document
+          .getElementById("searchInput")
+          .value.toLowerCase();
+
+        const selectedMethods = Array.from(
+          document.querySelectorAll("#methodDropdown input:checked")
+        ).map((input) => input.value);
+
+        const selectedRoutes = Array.from(
+          document.querySelectorAll("#routeDropdownContent input:checked")
+        ).map((input) => input.value);
+
+        const timeFilter = document.querySelector(
+          'input[name="timeFilter"]:checked'
+        ).value;
+
+        filteredData = allData.filter((item) => {
+          const matchesSearch =
+            searchTerm === "" ||
+            item.routeName.toLowerCase().includes(searchTerm) ||
+            item.apiName.toLowerCase().includes(searchTerm) ||
+            item.method.toLowerCase().includes(searchTerm) ||
+            item.url.toLowerCase().includes(searchTerm);
+
+          const matchesMethod = selectedMethods.includes(item.method);
+          const matchesRoute = selectedRoutes.includes(item.routeName);
+          const matchesTime =
+            timeFilter === "all" || item.avgResponseTime < parseInt(timeFilter);
+
+          return matchesSearch && matchesMethod && matchesRoute && matchesTime;
+        });
+
+        currentPage = 1;
+        updateStats();
+        renderTable();
+      }
+
+      document
+        .getElementById("searchInput")
+        .addEventListener("input", applyFilters);
+
+      document
+        .querySelectorAll('#methodDropdown input, input[name="timeFilter"]')
+        .forEach((input) => {
+          input.addEventListener("change", applyFilters);
+        });
+
+      document.getElementById("prevBtn").addEventListener("click", () => {
+        if (currentPage > 1) {
+          currentPage--;
+          renderTable();
+        }
+      });
+
+      document.getElementById("nextBtn").addEventListener("click", () => {
+        const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+        if (currentPage < totalPages) {
+          currentPage++;
+          renderTable();
+        }
+      });
+
+      document.querySelectorAll(".dropdown-button").forEach((button) => {
+        button.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const dropdown = button.nextElementSibling;
+          const isShow = dropdown.classList.contains("show");
+
+          document
+            .querySelectorAll(".dropdown-content")
+            .forEach((d) => d.classList.remove("show"));
+
+          if (!isShow) {
+            dropdown.classList.add("show");
+          }
+        });
+      });
+
+      document.addEventListener("click", () => {
+        document
+          .querySelectorAll(".dropdown-content")
+          .forEach((d) => d.classList.remove("show"));
+      });
+
+      document.querySelectorAll(".dropdown-content").forEach((content) => {
+        content.addEventListener("click", (e) => {
+          e.stopPropagation();
+        });
+      });
+
+      const themeToggle = document.getElementById("themeToggle");
+      const sunIcon = document.getElementById("sunIcon");
+      const moonIcon = document.getElementById("moonIcon");
+
+      themeToggle.addEventListener("click", () => {
+        const currentTheme = document.body.getAttribute("data-theme");
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+
+        document.body.setAttribute("data-theme", newTheme);
+
+        if (newTheme === "dark") {
+          sunIcon.style.display = "none";
+          moonIcon.style.display = "block";
+        } else {
+          sunIcon.style.display = "block";
+          moonIcon.style.display = "none";
+        }
+      });
+
+      fetchData();
+    </script>
+  </body>
+</html>
